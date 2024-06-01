@@ -1,0 +1,7 @@
+{
+    "total_pages": 32,
+    "nodes": 4,
+    "pages_per_node": 8,
+    "algorithm": "FIFO", 
+    "replication": true 
+}

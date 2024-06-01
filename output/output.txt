@@ -1,0 +1,4 @@
+Node 0: Page Faults=4, Hits=3, Invalidations=0
+Node 1: Page Faults=4, Hits=3, Invalidations=0
+Node 2: Page Faults=4, Hits=3, Invalidations=0
+Node 3: Page Faults=4, Hits=3, Invalidations=0

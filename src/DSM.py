@@ -1,25 +1,19 @@
 import globals
-from collections import deque
-import logging
+from VirtualMemory import VirtualMemory
 
-# Basic functions for DSM, I need to implement the functions.
+
 class DSM:
     def __init__(self):
+        self.virtual_memory = VirtualMemory()
     
-
-    def handle_page_fault(self, node, page):
-        pass
-    def replace_page(self, node, page):
-        pass
-    def lru_replace(self, node, page):
-        pass
-
-    def optimal_replace(self, node, page):
-        pass
+    def simulate(self):
+        for index, ref in enumerate(globals.references):
+            cpu_id, page, mode = ref
+            print(f"Processing reference: CPU={cpu_id}, Page={page}, Mode={mode}")
+            self.virtual_memory.handle_reference(cpu_id, page, index)
+        self.report_stats()
     
-    def fifo_replace(self, node, page):
-        pass
     def report_stats(self):
-        pass
-    def log_event(self, event):
-        logging.info(event)
+        self.virtual_memory.report_stats()
+    
+    

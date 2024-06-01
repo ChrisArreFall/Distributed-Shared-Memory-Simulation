@@ -1,14 +1,14 @@
 
-def init(Total_pages, Nodes, Pages_per_node, Algorithm, Replication, References):
+def init(Total_pages, CPUs, Pages_per_cpu, Algorithm, Replication, References):
     global total_pages 
-    global nodes 
-    global pages_per_node 
+    global cpus 
+    global pages_per_cpu 
     global algorithm 
     global replication 
     global references 
     total_pages = Total_pages
-    nodes = Nodes
-    pages_per_node = Pages_per_node
+    cpus = CPUs
+    pages_per_cpu = Pages_per_cpu
     algorithm = Algorithm
     replication = Replication
     references = References
