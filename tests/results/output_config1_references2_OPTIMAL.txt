@@ -1,43 +1,67 @@
-Processing reference: Node=0, Page=1, Mode=r
-Page fault: Node=0, Page=1
-Page added: Node=0, Page=1
-Processing reference: Node=0, Page=2, Mode=r
-Page fault: Node=0, Page=2
-Page added: Node=0, Page=2
-Processing reference: Node=0, Page=3, Mode=r
-Page fault: Node=0, Page=3
-Page added: Node=0, Page=3
-Processing reference: Node=1, Page=4, Mode=w
-Page fault: Node=1, Page=4
-Page added: Node=1, Page=4
-Processing reference: Node=1, Page=5, Mode=w
-Page fault: Node=1, Page=5
-Page added: Node=1, Page=5
-Processing reference: Node=2, Page=6, Mode=r
-Page fault: Node=2, Page=6
-Page added: Node=2, Page=6
-Processing reference: Node=2, Page=7, Mode=r
-Page fault: Node=2, Page=7
-Page added: Node=2, Page=7
-Processing reference: Node=3, Page=8, Mode=w
-Page fault: Node=3, Page=8
-Page added: Node=3, Page=8
-Processing reference: Node=3, Page=9, Mode=w
-Page fault: Node=3, Page=9
-Page added: Node=3, Page=9
-Processing reference: Node=0, Page=10, Mode=r
-Page fault: Node=0, Page=10
-Page added: Node=0, Page=10
-Processing reference: Node=1, Page=11, Mode=w
-Page fault: Node=1, Page=11
-Page added: Node=1, Page=11
-Processing reference: Node=2, Page=12, Mode=r
-Page fault: Node=2, Page=12
-Page added: Node=2, Page=12
-Processing reference: Node=3, Page=13, Mode=w
-Page fault: Node=3, Page=13
-Page added: Node=3, Page=13
-Node 0: Page Faults=4, Hits=0, Invalidations=0
-Node 1: Page Faults=3, Hits=0, Invalidations=0
-Node 2: Page Faults=3, Hits=0, Invalidations=0
-Node 3: Page Faults=3, Hits=0, Invalidations=0
+Page 1 added to Virtual Memory
+Page 1 not found in any CPU
+Page 1 in 0 deleted from Virtual Memory
+Page 1 found in cache
+Page 1 mode changed from r to w.
+Page 2 added to Virtual Memory
+Page 2 not found in any CPU
+Page 2 in 0 deleted from Virtual Memory
+Page 3 added to Virtual Memory
+Page 3 not found in any CPU
+Page 3 in 0 deleted from Virtual Memory
+Page 1 added to Virtual Memory
+Page 4 added to Virtual Memory
+Page 4 not found in any CPU
+Page 4 in 1 deleted from Virtual Memory
+Page 5 added to Virtual Memory
+Page 5 not found in any CPU
+Page 5 in 1 deleted from Virtual Memory
+Page 6 added to Virtual Memory
+Page 6 not found in any CPU
+Page 6 in 1 deleted from Virtual Memory
+Page 7 added to Virtual Memory
+Page 7 not found in any CPU
+Page 7 in 1 deleted from Virtual Memory
+Page 8 added to Virtual Memory
+Page 8 not found in any CPU
+Page 8 in 1 deleted from Virtual Memory
+Page 9 added to Virtual Memory
+Page 9 not found in any CPU
+Page 9 in 1 deleted from Virtual Memory
+Page 10 added to Virtual Memory
+Page 10 not found in any CPU
+Page 10 in 1 deleted from Virtual Memory
+Page 2 added to Virtual Memory
+Page 11 added to Virtual Memory
+Page 11 not found in any CPU
+Page 11 in 2 deleted from Virtual Memory
+Page 4 added to Virtual Memory
+Page 12 added to Virtual Memory
+Page 12 not found in any CPU
+Page 12 in 3 deleted from Virtual Memory
+Page 6 added to Virtual Memory
+Page 13 added to Virtual Memory
+Page 13 not found in any CPU
+Page 13 in 4 deleted from Virtual Memory
+Page 8 added to Virtual Memory
+--------------------STATUS AFTER 14 REFERENCES--------------------
+--------------------OPTIMAL-------------------
+----------------Virtual Memory----------------
+[1, 2, 4, 6, 8]
+--------------------CPU 0---------------------
+[3, 10]
+--------------------CPU 1---------------------
+[5, 11]
+--------------------CPU 2---------------------
+[7, 12]
+--------------------CPU 3---------------------
+[9, 13]
+------- FINAL STATISTICS -------
+CPU 0 - Page Faults: 4 (28.57%), Hits: 1 (7.14%), Invalidations: 2 (14.29%)
+CPU 1 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+CPU 2 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+CPU 3 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+Total Page Faults: 13
+Total Hits: 1
+Total Invalidations: 5
+---------------------END---------------------

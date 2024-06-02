@@ -1,7 +1,7 @@
 {
     "total_pages": 16,
-    "nodes": 4,
-    "pages_per_node": 6,
+    "cpus": 4,
+    "pages_per_cpu": 2,
     "algorithm": "FIFO", 
     "replication": true 
 }

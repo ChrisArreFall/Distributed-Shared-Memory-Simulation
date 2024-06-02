@@ -1,0 +1,4 @@
+CPU 0: Page Faults=4, Hits=1, Invalidations=2
+CPU 1: Page Faults=3, Hits=0, Invalidations=1
+CPU 2: Page Faults=3, Hits=0, Invalidations=1
+CPU 3: Page Faults=3, Hits=0, Invalidations=1

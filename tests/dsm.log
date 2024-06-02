@@ -1,0 +1,168 @@
+2024-06-01 23:00:42,226 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=LRU, replication=True
+2024-06-01 23:00:42,226 Processing reference 1: CPU=0, Page=1, Mode=r
+2024-06-01 23:00:42,226 CPU 0: Page fault for page 1
+2024-06-01 23:00:42,226 Processing reference 2: CPU=0, Page=1, Mode=w
+2024-06-01 23:00:42,226 CPU 0: Page 1 loaded from cache
+2024-06-01 23:00:42,226 Processing reference 3: CPU=0, Page=2, Mode=r
+2024-06-01 23:00:42,226 CPU 0: Page fault for page 2
+2024-06-01 23:00:42,226 Processing reference 4: CPU=0, Page=3, Mode=r
+2024-06-01 23:00:42,226 CPU 0: Page fault for page 3
+2024-06-01 23:00:42,226 CPU 0: Cache is full
+2024-06-01 23:00:42,227 CPU 0: Evicting page with algorithm LRU
+2024-06-01 23:00:42,227 CPU 0: LRU eviction of page 1
+2024-06-01 23:00:42,227 Processing reference 5: CPU=1, Page=4, Mode=w
+2024-06-01 23:00:42,227 CPU 1: Page fault for page 4
+2024-06-01 23:00:42,227 Processing reference 6: CPU=1, Page=5, Mode=w
+2024-06-01 23:00:42,227 CPU 1: Page fault for page 5
+2024-06-01 23:00:42,227 Processing reference 7: CPU=2, Page=6, Mode=r
+2024-06-01 23:00:42,227 CPU 2: Page fault for page 6
+2024-06-01 23:00:42,227 Processing reference 8: CPU=2, Page=7, Mode=r
+2024-06-01 23:00:42,227 CPU 2: Page fault for page 7
+2024-06-01 23:00:42,227 Processing reference 9: CPU=3, Page=8, Mode=w
+2024-06-01 23:00:42,227 CPU 3: Page fault for page 8
+2024-06-01 23:00:42,227 Processing reference 10: CPU=3, Page=9, Mode=w
+2024-06-01 23:00:42,227 CPU 3: Page fault for page 9
+2024-06-01 23:00:42,227 Processing reference 11: CPU=0, Page=10, Mode=r
+2024-06-01 23:00:42,227 CPU 0: Page fault for page 10
+2024-06-01 23:00:42,227 CPU 0: Cache is full
+2024-06-01 23:00:42,227 CPU 0: Evicting page with algorithm LRU
+2024-06-01 23:00:42,227 CPU 0: LRU eviction of page 2
+2024-06-01 23:00:42,227 Processing reference 12: CPU=1, Page=11, Mode=w
+2024-06-01 23:00:42,227 CPU 1: Page fault for page 11
+2024-06-01 23:00:42,228 CPU 1: Cache is full
+2024-06-01 23:00:42,228 CPU 1: Evicting page with algorithm LRU
+2024-06-01 23:00:42,228 CPU 1: LRU eviction of page 4
+2024-06-01 23:00:42,228 Processing reference 13: CPU=2, Page=12, Mode=r
+2024-06-01 23:00:42,228 CPU 2: Page fault for page 12
+2024-06-01 23:00:42,228 CPU 2: Cache is full
+2024-06-01 23:00:42,228 CPU 2: Evicting page with algorithm LRU
+2024-06-01 23:00:42,228 CPU 2: LRU eviction of page 6
+2024-06-01 23:00:42,228 Processing reference 14: CPU=3, Page=13, Mode=w
+2024-06-01 23:00:42,228 CPU 3: Page fault for page 13
+2024-06-01 23:00:42,228 CPU 3: Cache is full
+2024-06-01 23:00:42,228 CPU 3: Evicting page with algorithm LRU
+2024-06-01 23:00:42,228 CPU 3: LRU eviction of page 8
+2024-06-01 23:00:42,228 CPU 0 status: [<Page.Page object at 0x0000020DFAC8B710>, <Page.Page object at 0x0000020DFAC8BD90>]
+2024-06-01 23:00:42,228 CPU 1 status: [<Page.Page object at 0x0000020DFAC8B310>, <Page.Page object at 0x0000020DFAC8BE90>]
+2024-06-01 23:00:42,228 CPU 2 status: [<Page.Page object at 0x0000020DFAC8BDD0>, <Page.Page object at 0x0000020DFAC8BE50>]
+2024-06-01 23:00:42,228 CPU 3 status: [<Page.Page object at 0x0000020DFAC8B1D0>, <Page.Page object at 0x0000020DFAC8BED0>]
+2024-06-01 23:00:42,228 ------- FINAL STATISTICS -------
+2024-06-01 23:00:42,228 CPU 0 - Page Faults: 4 (28.57%), Hits: 1 (7.14%), Invalidations: 2 (14.29%)
+2024-06-01 23:00:42,228 CPU 1 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+2024-06-01 23:00:42,228 CPU 2 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+2024-06-01 23:00:42,229 CPU 3 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+2024-06-01 23:00:42,229 Total Page Faults: 13
+2024-06-01 23:00:42,229 Total Hits: 1
+2024-06-01 23:00:42,229 Total Invalidations: 5
+2024-06-01 23:00:42,305 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=FIFO, replication=True
+2024-06-01 23:00:42,305 Processing reference 1: CPU=0, Page=1, Mode=r
+2024-06-01 23:00:42,305 CPU 0: Page fault for page 1
+2024-06-01 23:00:42,305 Processing reference 2: CPU=0, Page=1, Mode=w
+2024-06-01 23:00:42,306 CPU 0: Page 1 loaded from cache
+2024-06-01 23:00:42,306 Processing reference 3: CPU=0, Page=2, Mode=r
+2024-06-01 23:00:42,306 CPU 0: Page fault for page 2
+2024-06-01 23:00:42,306 Processing reference 4: CPU=0, Page=3, Mode=r
+2024-06-01 23:00:42,306 CPU 0: Page fault for page 3
+2024-06-01 23:00:42,306 CPU 0: Cache is full
+2024-06-01 23:00:42,306 CPU 0: Evicting page with algorithm FIFO
+2024-06-01 23:00:42,306 CPU 0: FIFO eviction of page 1
+2024-06-01 23:00:42,306 Processing reference 5: CPU=1, Page=4, Mode=w
+2024-06-01 23:00:42,306 CPU 1: Page fault for page 4
+2024-06-01 23:00:42,306 Processing reference 6: CPU=1, Page=5, Mode=w
+2024-06-01 23:00:42,306 CPU 1: Page fault for page 5
+2024-06-01 23:00:42,306 Processing reference 7: CPU=2, Page=6, Mode=r
+2024-06-01 23:00:42,306 CPU 2: Page fault for page 6
+2024-06-01 23:00:42,306 Processing reference 8: CPU=2, Page=7, Mode=r
+2024-06-01 23:00:42,306 CPU 2: Page fault for page 7
+2024-06-01 23:00:42,306 Processing reference 9: CPU=3, Page=8, Mode=w
+2024-06-01 23:00:42,306 CPU 3: Page fault for page 8
+2024-06-01 23:00:42,306 Processing reference 10: CPU=3, Page=9, Mode=w
+2024-06-01 23:00:42,306 CPU 3: Page fault for page 9
+2024-06-01 23:00:42,307 Processing reference 11: CPU=0, Page=10, Mode=r
+2024-06-01 23:00:42,307 CPU 0: Page fault for page 10
+2024-06-01 23:00:42,307 CPU 0: Cache is full
+2024-06-01 23:00:42,307 CPU 0: Evicting page with algorithm FIFO
+2024-06-01 23:00:42,307 CPU 0: FIFO eviction of page 2
+2024-06-01 23:00:42,307 Processing reference 12: CPU=1, Page=11, Mode=w
+2024-06-01 23:00:42,307 CPU 1: Page fault for page 11
+2024-06-01 23:00:42,307 CPU 1: Cache is full
+2024-06-01 23:00:42,307 CPU 1: Evicting page with algorithm FIFO
+2024-06-01 23:00:42,307 CPU 1: FIFO eviction of page 4
+2024-06-01 23:00:42,307 Processing reference 13: CPU=2, Page=12, Mode=r
+2024-06-01 23:00:42,307 CPU 2: Page fault for page 12
+2024-06-01 23:00:42,307 CPU 2: Cache is full
+2024-06-01 23:00:42,307 CPU 2: Evicting page with algorithm FIFO
+2024-06-01 23:00:42,307 CPU 2: FIFO eviction of page 6
+2024-06-01 23:00:42,307 Processing reference 14: CPU=3, Page=13, Mode=w
+2024-06-01 23:00:42,307 CPU 3: Page fault for page 13
+2024-06-01 23:00:42,307 CPU 3: Cache is full
+2024-06-01 23:00:42,307 CPU 3: Evicting page with algorithm FIFO
+2024-06-01 23:00:42,307 CPU 3: FIFO eviction of page 8
+2024-06-01 23:00:42,307 CPU 0 status: [<Page.Page object at 0x00000208872BB710>, <Page.Page object at 0x00000208872BBD90>]
+2024-06-01 23:00:42,307 CPU 1 status: [<Page.Page object at 0x00000208872BB310>, <Page.Page object at 0x00000208872BBE90>]
+2024-06-01 23:00:42,308 CPU 2 status: [<Page.Page object at 0x00000208872BBDD0>, <Page.Page object at 0x00000208872BBE50>]
+2024-06-01 23:00:42,308 CPU 3 status: [<Page.Page object at 0x00000208872BB1D0>, <Page.Page object at 0x00000208872BBED0>]
+2024-06-01 23:00:42,308 ------- FINAL STATISTICS -------
+2024-06-01 23:00:42,308 CPU 0 - Page Faults: 4 (28.57%), Hits: 1 (7.14%), Invalidations: 2 (14.29%)
+2024-06-01 23:00:42,308 CPU 1 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+2024-06-01 23:00:42,308 CPU 2 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+2024-06-01 23:00:42,308 CPU 3 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+2024-06-01 23:00:42,308 Total Page Faults: 13
+2024-06-01 23:00:42,308 Total Hits: 1
+2024-06-01 23:00:42,308 Total Invalidations: 5
+2024-06-01 23:00:42,387 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=OPTIMAL, replication=True
+2024-06-01 23:00:42,387 Processing reference 1: CPU=0, Page=1, Mode=r
+2024-06-01 23:00:42,388 CPU 0: Page fault for page 1
+2024-06-01 23:00:42,388 Processing reference 2: CPU=0, Page=1, Mode=w
+2024-06-01 23:00:42,388 CPU 0: Page 1 loaded from cache
+2024-06-01 23:00:42,388 Processing reference 3: CPU=0, Page=2, Mode=r
+2024-06-01 23:00:42,388 CPU 0: Page fault for page 2
+2024-06-01 23:00:42,388 Processing reference 4: CPU=0, Page=3, Mode=r
+2024-06-01 23:00:42,388 CPU 0: Page fault for page 3
+2024-06-01 23:00:42,388 CPU 0: Cache is full
+2024-06-01 23:00:42,388 CPU 0: Evicting page with algorithm OPTIMAL
+2024-06-01 23:00:42,388 CPU 0: Optimal eviction of page 1
+2024-06-01 23:00:42,388 Processing reference 5: CPU=1, Page=4, Mode=w
+2024-06-01 23:00:42,388 CPU 1: Page fault for page 4
+2024-06-01 23:00:42,388 Processing reference 6: CPU=1, Page=5, Mode=w
+2024-06-01 23:00:42,388 CPU 1: Page fault for page 5
+2024-06-01 23:00:42,388 Processing reference 7: CPU=2, Page=6, Mode=r
+2024-06-01 23:00:42,388 CPU 2: Page fault for page 6
+2024-06-01 23:00:42,389 Processing reference 8: CPU=2, Page=7, Mode=r
+2024-06-01 23:00:42,389 CPU 2: Page fault for page 7
+2024-06-01 23:00:42,389 Processing reference 9: CPU=3, Page=8, Mode=w
+2024-06-01 23:00:42,389 CPU 3: Page fault for page 8
+2024-06-01 23:00:42,389 Processing reference 10: CPU=3, Page=9, Mode=w
+2024-06-01 23:00:42,389 CPU 3: Page fault for page 9
+2024-06-01 23:00:42,389 Processing reference 11: CPU=0, Page=10, Mode=r
+2024-06-01 23:00:42,389 CPU 0: Page fault for page 10
+2024-06-01 23:00:42,389 CPU 0: Cache is full
+2024-06-01 23:00:42,389 CPU 0: Evicting page with algorithm OPTIMAL
+2024-06-01 23:00:42,389 CPU 0: Optimal eviction of page 2
+2024-06-01 23:00:42,389 Processing reference 12: CPU=1, Page=11, Mode=w
+2024-06-01 23:00:42,390 CPU 1: Page fault for page 11
+2024-06-01 23:00:42,390 CPU 1: Cache is full
+2024-06-01 23:00:42,390 CPU 1: Evicting page with algorithm OPTIMAL
+2024-06-01 23:00:42,390 CPU 1: Optimal eviction of page 4
+2024-06-01 23:00:42,390 Processing reference 13: CPU=2, Page=12, Mode=r
+2024-06-01 23:00:42,390 CPU 2: Page fault for page 12
+2024-06-01 23:00:42,390 CPU 2: Cache is full
+2024-06-01 23:00:42,390 CPU 2: Evicting page with algorithm OPTIMAL
+2024-06-01 23:00:42,390 CPU 2: Optimal eviction of page 6
+2024-06-01 23:00:42,390 Processing reference 14: CPU=3, Page=13, Mode=w
+2024-06-01 23:00:42,390 CPU 3: Page fault for page 13
+2024-06-01 23:00:42,390 CPU 3: Cache is full
+2024-06-01 23:00:42,390 CPU 3: Evicting page with algorithm OPTIMAL
+2024-06-01 23:00:42,390 CPU 3: Optimal eviction of page 8
+2024-06-01 23:00:42,391 CPU 0 status: [<Page.Page object at 0x000001CE38D3B710>, <Page.Page object at 0x000001CE38D3BD90>]
+2024-06-01 23:00:42,391 CPU 1 status: [<Page.Page object at 0x000001CE38D3B310>, <Page.Page object at 0x000001CE38D3BE90>]
+2024-06-01 23:00:42,391 CPU 2 status: [<Page.Page object at 0x000001CE38D3BDD0>, <Page.Page object at 0x000001CE38D3BE50>]
+2024-06-01 23:00:42,391 CPU 3 status: [<Page.Page object at 0x000001CE38D3B1D0>, <Page.Page object at 0x000001CE38D3BED0>]
+2024-06-01 23:00:42,391 ------- FINAL STATISTICS -------
+2024-06-01 23:00:42,391 CPU 0 - Page Faults: 4 (28.57%), Hits: 1 (7.14%), Invalidations: 2 (14.29%)
+2024-06-01 23:00:42,391 CPU 1 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+2024-06-01 23:00:42,391 CPU 2 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+2024-06-01 23:00:42,391 CPU 3 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
+2024-06-01 23:00:42,391 Total Page Faults: 13
+2024-06-01 23:00:42,391 Total Hits: 1
+2024-06-01 23:00:42,391 Total Invalidations: 5
