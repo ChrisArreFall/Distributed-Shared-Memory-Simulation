@@ -1,336 +1,1074 @@
-2024-06-01 23:00:42,226 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=LRU, replication=True
-2024-06-01 23:00:42,226 Processing reference 1: CPU=0, Page=1, Mode=r
-2024-06-01 23:00:42,226 CPU 0: Page fault for page 1
-2024-06-01 23:00:42,226 Processing reference 2: CPU=0, Page=1, Mode=w
-2024-06-01 23:00:42,226 CPU 0: Page 1 loaded from cache
-2024-06-01 23:00:42,226 Processing reference 3: CPU=0, Page=2, Mode=r
-2024-06-01 23:00:42,226 CPU 0: Page fault for page 2
-2024-06-01 23:00:42,226 Processing reference 4: CPU=0, Page=3, Mode=r
-2024-06-01 23:00:42,226 CPU 0: Page fault for page 3
-2024-06-01 23:00:42,226 CPU 0: Cache is full
-2024-06-01 23:00:42,227 CPU 0: Evicting page with algorithm LRU
-2024-06-01 23:00:42,227 CPU 0: LRU eviction of page 1
-2024-06-01 23:00:42,227 Processing reference 5: CPU=1, Page=4, Mode=w
-2024-06-01 23:00:42,227 CPU 1: Page fault for page 4
-2024-06-01 23:00:42,227 Processing reference 6: CPU=1, Page=5, Mode=w
-2024-06-01 23:00:42,227 CPU 1: Page fault for page 5
-2024-06-01 23:00:42,227 Processing reference 7: CPU=2, Page=6, Mode=r
-2024-06-01 23:00:42,227 CPU 2: Page fault for page 6
-2024-06-01 23:00:42,227 Processing reference 8: CPU=2, Page=7, Mode=r
-2024-06-01 23:00:42,227 CPU 2: Page fault for page 7
-2024-06-01 23:00:42,227 Processing reference 9: CPU=3, Page=8, Mode=w
-2024-06-01 23:00:42,227 CPU 3: Page fault for page 8
-2024-06-01 23:00:42,227 Processing reference 10: CPU=3, Page=9, Mode=w
-2024-06-01 23:00:42,227 CPU 3: Page fault for page 9
-2024-06-01 23:00:42,227 Processing reference 11: CPU=0, Page=10, Mode=r
-2024-06-01 23:00:42,227 CPU 0: Page fault for page 10
-2024-06-01 23:00:42,227 CPU 0: Cache is full
-2024-06-01 23:00:42,227 CPU 0: Evicting page with algorithm LRU
-2024-06-01 23:00:42,227 CPU 0: LRU eviction of page 2
-2024-06-01 23:00:42,227 Processing reference 12: CPU=1, Page=11, Mode=w
-2024-06-01 23:00:42,227 CPU 1: Page fault for page 11
-2024-06-01 23:00:42,228 CPU 1: Cache is full
-2024-06-01 23:00:42,228 CPU 1: Evicting page with algorithm LRU
-2024-06-01 23:00:42,228 CPU 1: LRU eviction of page 4
-2024-06-01 23:00:42,228 Processing reference 13: CPU=2, Page=12, Mode=r
-2024-06-01 23:00:42,228 CPU 2: Page fault for page 12
-2024-06-01 23:00:42,228 CPU 2: Cache is full
-2024-06-01 23:00:42,228 CPU 2: Evicting page with algorithm LRU
-2024-06-01 23:00:42,228 CPU 2: LRU eviction of page 6
-2024-06-01 23:00:42,228 Processing reference 14: CPU=3, Page=13, Mode=w
-2024-06-01 23:00:42,228 CPU 3: Page fault for page 13
-2024-06-01 23:00:42,228 CPU 3: Cache is full
-2024-06-01 23:00:42,228 CPU 3: Evicting page with algorithm LRU
-2024-06-01 23:00:42,228 CPU 3: LRU eviction of page 8
-2024-06-01 23:00:42,228 CPU 0 status: [<Page.Page object at 0x0000020DFAC8B710>, <Page.Page object at 0x0000020DFAC8BD90>]
-2024-06-01 23:00:42,228 CPU 1 status: [<Page.Page object at 0x0000020DFAC8B310>, <Page.Page object at 0x0000020DFAC8BE90>]
-2024-06-01 23:00:42,228 CPU 2 status: [<Page.Page object at 0x0000020DFAC8BDD0>, <Page.Page object at 0x0000020DFAC8BE50>]
-2024-06-01 23:00:42,228 CPU 3 status: [<Page.Page object at 0x0000020DFAC8B1D0>, <Page.Page object at 0x0000020DFAC8BED0>]
-2024-06-01 23:00:42,228 ------- FINAL STATISTICS -------
-2024-06-01 23:00:42,228 CPU 0 - Page Faults: 4 (28.57%), Hits: 1 (7.14%), Invalidations: 2 (14.29%)
-2024-06-01 23:00:42,228 CPU 1 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:00:42,228 CPU 2 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:00:42,229 CPU 3 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:00:42,229 Total Page Faults: 13
-2024-06-01 23:00:42,229 Total Hits: 1
-2024-06-01 23:00:42,229 Total Invalidations: 5
-2024-06-01 23:00:42,305 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=FIFO, replication=True
-2024-06-01 23:00:42,305 Processing reference 1: CPU=0, Page=1, Mode=r
-2024-06-01 23:00:42,305 CPU 0: Page fault for page 1
-2024-06-01 23:00:42,305 Processing reference 2: CPU=0, Page=1, Mode=w
-2024-06-01 23:00:42,306 CPU 0: Page 1 loaded from cache
-2024-06-01 23:00:42,306 Processing reference 3: CPU=0, Page=2, Mode=r
-2024-06-01 23:00:42,306 CPU 0: Page fault for page 2
-2024-06-01 23:00:42,306 Processing reference 4: CPU=0, Page=3, Mode=r
-2024-06-01 23:00:42,306 CPU 0: Page fault for page 3
-2024-06-01 23:00:42,306 CPU 0: Cache is full
-2024-06-01 23:00:42,306 CPU 0: Evicting page with algorithm FIFO
-2024-06-01 23:00:42,306 CPU 0: FIFO eviction of page 1
-2024-06-01 23:00:42,306 Processing reference 5: CPU=1, Page=4, Mode=w
-2024-06-01 23:00:42,306 CPU 1: Page fault for page 4
-2024-06-01 23:00:42,306 Processing reference 6: CPU=1, Page=5, Mode=w
-2024-06-01 23:00:42,306 CPU 1: Page fault for page 5
-2024-06-01 23:00:42,306 Processing reference 7: CPU=2, Page=6, Mode=r
-2024-06-01 23:00:42,306 CPU 2: Page fault for page 6
-2024-06-01 23:00:42,306 Processing reference 8: CPU=2, Page=7, Mode=r
-2024-06-01 23:00:42,306 CPU 2: Page fault for page 7
-2024-06-01 23:00:42,306 Processing reference 9: CPU=3, Page=8, Mode=w
-2024-06-01 23:00:42,306 CPU 3: Page fault for page 8
-2024-06-01 23:00:42,306 Processing reference 10: CPU=3, Page=9, Mode=w
-2024-06-01 23:00:42,306 CPU 3: Page fault for page 9
-2024-06-01 23:00:42,307 Processing reference 11: CPU=0, Page=10, Mode=r
-2024-06-01 23:00:42,307 CPU 0: Page fault for page 10
-2024-06-01 23:00:42,307 CPU 0: Cache is full
-2024-06-01 23:00:42,307 CPU 0: Evicting page with algorithm FIFO
-2024-06-01 23:00:42,307 CPU 0: FIFO eviction of page 2
-2024-06-01 23:00:42,307 Processing reference 12: CPU=1, Page=11, Mode=w
-2024-06-01 23:00:42,307 CPU 1: Page fault for page 11
-2024-06-01 23:00:42,307 CPU 1: Cache is full
-2024-06-01 23:00:42,307 CPU 1: Evicting page with algorithm FIFO
-2024-06-01 23:00:42,307 CPU 1: FIFO eviction of page 4
-2024-06-01 23:00:42,307 Processing reference 13: CPU=2, Page=12, Mode=r
-2024-06-01 23:00:42,307 CPU 2: Page fault for page 12
-2024-06-01 23:00:42,307 CPU 2: Cache is full
-2024-06-01 23:00:42,307 CPU 2: Evicting page with algorithm FIFO
-2024-06-01 23:00:42,307 CPU 2: FIFO eviction of page 6
-2024-06-01 23:00:42,307 Processing reference 14: CPU=3, Page=13, Mode=w
-2024-06-01 23:00:42,307 CPU 3: Page fault for page 13
-2024-06-01 23:00:42,307 CPU 3: Cache is full
-2024-06-01 23:00:42,307 CPU 3: Evicting page with algorithm FIFO
-2024-06-01 23:00:42,307 CPU 3: FIFO eviction of page 8
-2024-06-01 23:00:42,307 CPU 0 status: [<Page.Page object at 0x00000208872BB710>, <Page.Page object at 0x00000208872BBD90>]
-2024-06-01 23:00:42,307 CPU 1 status: [<Page.Page object at 0x00000208872BB310>, <Page.Page object at 0x00000208872BBE90>]
-2024-06-01 23:00:42,308 CPU 2 status: [<Page.Page object at 0x00000208872BBDD0>, <Page.Page object at 0x00000208872BBE50>]
-2024-06-01 23:00:42,308 CPU 3 status: [<Page.Page object at 0x00000208872BB1D0>, <Page.Page object at 0x00000208872BBED0>]
-2024-06-01 23:00:42,308 ------- FINAL STATISTICS -------
-2024-06-01 23:00:42,308 CPU 0 - Page Faults: 4 (28.57%), Hits: 1 (7.14%), Invalidations: 2 (14.29%)
-2024-06-01 23:00:42,308 CPU 1 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:00:42,308 CPU 2 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:00:42,308 CPU 3 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:00:42,308 Total Page Faults: 13
-2024-06-01 23:00:42,308 Total Hits: 1
-2024-06-01 23:00:42,308 Total Invalidations: 5
-2024-06-01 23:00:42,387 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=OPTIMAL, replication=True
-2024-06-01 23:00:42,387 Processing reference 1: CPU=0, Page=1, Mode=r
-2024-06-01 23:00:42,388 CPU 0: Page fault for page 1
-2024-06-01 23:00:42,388 Processing reference 2: CPU=0, Page=1, Mode=w
-2024-06-01 23:00:42,388 CPU 0: Page 1 loaded from cache
-2024-06-01 23:00:42,388 Processing reference 3: CPU=0, Page=2, Mode=r
-2024-06-01 23:00:42,388 CPU 0: Page fault for page 2
-2024-06-01 23:00:42,388 Processing reference 4: CPU=0, Page=3, Mode=r
-2024-06-01 23:00:42,388 CPU 0: Page fault for page 3
-2024-06-01 23:00:42,388 CPU 0: Cache is full
-2024-06-01 23:00:42,388 CPU 0: Evicting page with algorithm OPTIMAL
-2024-06-01 23:00:42,388 CPU 0: Optimal eviction of page 1
-2024-06-01 23:00:42,388 Processing reference 5: CPU=1, Page=4, Mode=w
-2024-06-01 23:00:42,388 CPU 1: Page fault for page 4
-2024-06-01 23:00:42,388 Processing reference 6: CPU=1, Page=5, Mode=w
-2024-06-01 23:00:42,388 CPU 1: Page fault for page 5
-2024-06-01 23:00:42,388 Processing reference 7: CPU=2, Page=6, Mode=r
-2024-06-01 23:00:42,388 CPU 2: Page fault for page 6
-2024-06-01 23:00:42,389 Processing reference 8: CPU=2, Page=7, Mode=r
-2024-06-01 23:00:42,389 CPU 2: Page fault for page 7
-2024-06-01 23:00:42,389 Processing reference 9: CPU=3, Page=8, Mode=w
-2024-06-01 23:00:42,389 CPU 3: Page fault for page 8
-2024-06-01 23:00:42,389 Processing reference 10: CPU=3, Page=9, Mode=w
-2024-06-01 23:00:42,389 CPU 3: Page fault for page 9
-2024-06-01 23:00:42,389 Processing reference 11: CPU=0, Page=10, Mode=r
-2024-06-01 23:00:42,389 CPU 0: Page fault for page 10
-2024-06-01 23:00:42,389 CPU 0: Cache is full
-2024-06-01 23:00:42,389 CPU 0: Evicting page with algorithm OPTIMAL
-2024-06-01 23:00:42,389 CPU 0: Optimal eviction of page 2
-2024-06-01 23:00:42,389 Processing reference 12: CPU=1, Page=11, Mode=w
-2024-06-01 23:00:42,390 CPU 1: Page fault for page 11
-2024-06-01 23:00:42,390 CPU 1: Cache is full
-2024-06-01 23:00:42,390 CPU 1: Evicting page with algorithm OPTIMAL
-2024-06-01 23:00:42,390 CPU 1: Optimal eviction of page 4
-2024-06-01 23:00:42,390 Processing reference 13: CPU=2, Page=12, Mode=r
-2024-06-01 23:00:42,390 CPU 2: Page fault for page 12
-2024-06-01 23:00:42,390 CPU 2: Cache is full
-2024-06-01 23:00:42,390 CPU 2: Evicting page with algorithm OPTIMAL
-2024-06-01 23:00:42,390 CPU 2: Optimal eviction of page 6
-2024-06-01 23:00:42,390 Processing reference 14: CPU=3, Page=13, Mode=w
-2024-06-01 23:00:42,390 CPU 3: Page fault for page 13
-2024-06-01 23:00:42,390 CPU 3: Cache is full
-2024-06-01 23:00:42,390 CPU 3: Evicting page with algorithm OPTIMAL
-2024-06-01 23:00:42,390 CPU 3: Optimal eviction of page 8
-2024-06-01 23:00:42,391 CPU 0 status: [<Page.Page object at 0x000001CE38D3B710>, <Page.Page object at 0x000001CE38D3BD90>]
-2024-06-01 23:00:42,391 CPU 1 status: [<Page.Page object at 0x000001CE38D3B310>, <Page.Page object at 0x000001CE38D3BE90>]
-2024-06-01 23:00:42,391 CPU 2 status: [<Page.Page object at 0x000001CE38D3BDD0>, <Page.Page object at 0x000001CE38D3BE50>]
-2024-06-01 23:00:42,391 CPU 3 status: [<Page.Page object at 0x000001CE38D3B1D0>, <Page.Page object at 0x000001CE38D3BED0>]
-2024-06-01 23:00:42,391 ------- FINAL STATISTICS -------
-2024-06-01 23:00:42,391 CPU 0 - Page Faults: 4 (28.57%), Hits: 1 (7.14%), Invalidations: 2 (14.29%)
-2024-06-01 23:00:42,391 CPU 1 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:00:42,391 CPU 2 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:00:42,391 CPU 3 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:00:42,391 Total Page Faults: 13
-2024-06-01 23:00:42,391 Total Hits: 1
-2024-06-01 23:00:42,391 Total Invalidations: 5
-2024-06-01 23:37:24,514 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=LRU, replication=True
-2024-06-01 23:37:24,514 Processing reference 1: CPU=0, Page=1, Mode=r
-2024-06-01 23:37:24,514 CPU 0: Page fault for page 1
-2024-06-01 23:37:24,514 Processing reference 2: CPU=0, Page=1, Mode=w
-2024-06-01 23:37:24,514 CPU 0: Page 1 loaded from cache
-2024-06-01 23:37:24,514 Processing reference 3: CPU=0, Page=2, Mode=r
-2024-06-01 23:37:24,514 CPU 0: Page fault for page 2
-2024-06-01 23:37:24,514 Processing reference 4: CPU=0, Page=3, Mode=r
-2024-06-01 23:37:24,514 CPU 0: Page fault for page 3
-2024-06-01 23:37:24,514 CPU 0: Cache is full
-2024-06-01 23:37:24,514 CPU 0: Evicting page with algorithm LRU
-2024-06-01 23:37:24,515 CPU 0: LRU eviction of page 1
-2024-06-01 23:37:24,515 Processing reference 5: CPU=1, Page=4, Mode=w
-2024-06-01 23:37:24,515 CPU 1: Page fault for page 4
-2024-06-01 23:37:24,515 Processing reference 6: CPU=1, Page=5, Mode=w
-2024-06-01 23:37:24,515 CPU 1: Page fault for page 5
-2024-06-01 23:37:24,515 Processing reference 7: CPU=2, Page=6, Mode=r
-2024-06-01 23:37:24,515 CPU 2: Page fault for page 6
-2024-06-01 23:37:24,515 Processing reference 8: CPU=2, Page=7, Mode=r
-2024-06-01 23:37:24,515 CPU 2: Page fault for page 7
-2024-06-01 23:37:24,515 Processing reference 9: CPU=3, Page=8, Mode=w
-2024-06-01 23:37:24,515 CPU 3: Page fault for page 8
-2024-06-01 23:37:24,515 Processing reference 10: CPU=3, Page=9, Mode=w
-2024-06-01 23:37:24,515 CPU 3: Page fault for page 9
-2024-06-01 23:37:24,515 Processing reference 11: CPU=0, Page=10, Mode=r
-2024-06-01 23:37:24,515 CPU 0: Page fault for page 10
-2024-06-01 23:37:24,515 CPU 0: Cache is full
-2024-06-01 23:37:24,515 CPU 0: Evicting page with algorithm LRU
-2024-06-01 23:37:24,515 CPU 0: LRU eviction of page 2
-2024-06-01 23:37:24,515 Processing reference 12: CPU=1, Page=11, Mode=w
-2024-06-01 23:37:24,515 CPU 1: Page fault for page 11
-2024-06-01 23:37:24,516 CPU 1: Cache is full
-2024-06-01 23:37:24,516 CPU 1: Evicting page with algorithm LRU
-2024-06-01 23:37:24,516 CPU 1: LRU eviction of page 4
-2024-06-01 23:37:24,516 Processing reference 13: CPU=2, Page=12, Mode=r
-2024-06-01 23:37:24,516 CPU 2: Page fault for page 12
-2024-06-01 23:37:24,516 CPU 2: Cache is full
-2024-06-01 23:37:24,516 CPU 2: Evicting page with algorithm LRU
-2024-06-01 23:37:24,516 CPU 2: LRU eviction of page 6
-2024-06-01 23:37:24,516 Processing reference 14: CPU=3, Page=13, Mode=w
-2024-06-01 23:37:24,516 CPU 3: Page fault for page 13
-2024-06-01 23:37:24,516 CPU 3: Cache is full
-2024-06-01 23:37:24,516 CPU 3: Evicting page with algorithm LRU
-2024-06-01 23:37:24,516 CPU 3: LRU eviction of page 8
-2024-06-01 23:37:24,516 CPU 0 status: [<Page.Page object at 0x00000192C13DDE50>, <Page.Page object at 0x00000192C13DE490>]
-2024-06-01 23:37:24,516 CPU 1 status: [<Page.Page object at 0x00000192C13DDA50>, <Page.Page object at 0x00000192C13DE590>]
-2024-06-01 23:37:24,516 CPU 2 status: [<Page.Page object at 0x00000192C13DE4D0>, <Page.Page object at 0x00000192C13DE550>]
-2024-06-01 23:37:24,516 CPU 3 status: [<Page.Page object at 0x00000192C13DD910>, <Page.Page object at 0x00000192C13DE5D0>]
-2024-06-01 23:37:24,516 ------- FINAL STATISTICS -------
-2024-06-01 23:37:24,516 CPU 0 - Page Faults: 4 (28.57%), Hits: 1 (7.14%), Invalidations: 2 (14.29%)
-2024-06-01 23:37:24,516 CPU 1 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:37:24,516 CPU 2 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:37:24,516 CPU 3 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:37:24,516 Total Page Faults: 13
-2024-06-01 23:37:24,517 Total Hits: 1
-2024-06-01 23:37:24,517 Total Invalidations: 5
-2024-06-01 23:37:24,595 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=FIFO, replication=True
-2024-06-01 23:37:24,595 Processing reference 1: CPU=0, Page=1, Mode=r
-2024-06-01 23:37:24,595 CPU 0: Page fault for page 1
-2024-06-01 23:37:24,595 Processing reference 2: CPU=0, Page=1, Mode=w
-2024-06-01 23:37:24,595 CPU 0: Page 1 loaded from cache
-2024-06-01 23:37:24,595 Processing reference 3: CPU=0, Page=2, Mode=r
-2024-06-01 23:37:24,596 CPU 0: Page fault for page 2
-2024-06-01 23:37:24,596 Processing reference 4: CPU=0, Page=3, Mode=r
-2024-06-01 23:37:24,596 CPU 0: Page fault for page 3
-2024-06-01 23:37:24,596 CPU 0: Cache is full
-2024-06-01 23:37:24,596 CPU 0: Evicting page with algorithm FIFO
-2024-06-01 23:37:24,596 CPU 0: FIFO eviction of page 1
-2024-06-01 23:37:24,596 Processing reference 5: CPU=1, Page=4, Mode=w
-2024-06-01 23:37:24,596 CPU 1: Page fault for page 4
-2024-06-01 23:37:24,596 Processing reference 6: CPU=1, Page=5, Mode=w
-2024-06-01 23:37:24,596 CPU 1: Page fault for page 5
-2024-06-01 23:37:24,596 Processing reference 7: CPU=2, Page=6, Mode=r
-2024-06-01 23:37:24,596 CPU 2: Page fault for page 6
-2024-06-01 23:37:24,596 Processing reference 8: CPU=2, Page=7, Mode=r
-2024-06-01 23:37:24,596 CPU 2: Page fault for page 7
-2024-06-01 23:37:24,596 Processing reference 9: CPU=3, Page=8, Mode=w
-2024-06-01 23:37:24,596 CPU 3: Page fault for page 8
-2024-06-01 23:37:24,596 Processing reference 10: CPU=3, Page=9, Mode=w
-2024-06-01 23:37:24,596 CPU 3: Page fault for page 9
-2024-06-01 23:37:24,596 Processing reference 11: CPU=0, Page=10, Mode=r
-2024-06-01 23:37:24,596 CPU 0: Page fault for page 10
-2024-06-01 23:37:24,597 CPU 0: Cache is full
-2024-06-01 23:37:24,597 CPU 0: Evicting page with algorithm FIFO
-2024-06-01 23:37:24,597 CPU 0: FIFO eviction of page 2
-2024-06-01 23:37:24,597 Processing reference 12: CPU=1, Page=11, Mode=w
-2024-06-01 23:37:24,597 CPU 1: Page fault for page 11
-2024-06-01 23:37:24,597 CPU 1: Cache is full
-2024-06-01 23:37:24,597 CPU 1: Evicting page with algorithm FIFO
-2024-06-01 23:37:24,597 CPU 1: FIFO eviction of page 4
-2024-06-01 23:37:24,597 Processing reference 13: CPU=2, Page=12, Mode=r
-2024-06-01 23:37:24,597 CPU 2: Page fault for page 12
-2024-06-01 23:37:24,597 CPU 2: Cache is full
-2024-06-01 23:37:24,597 CPU 2: Evicting page with algorithm FIFO
-2024-06-01 23:37:24,597 CPU 2: FIFO eviction of page 6
-2024-06-01 23:37:24,597 Processing reference 14: CPU=3, Page=13, Mode=w
-2024-06-01 23:37:24,597 CPU 3: Page fault for page 13
-2024-06-01 23:37:24,597 CPU 3: Cache is full
-2024-06-01 23:37:24,597 CPU 3: Evicting page with algorithm FIFO
-2024-06-01 23:37:24,597 CPU 3: FIFO eviction of page 8
-2024-06-01 23:37:24,597 CPU 0 status: [<Page.Page object at 0x0000023C4C50B290>, <Page.Page object at 0x0000023C4C50BBD0>]
-2024-06-01 23:37:24,597 CPU 1 status: [<Page.Page object at 0x0000023C4C50B590>, <Page.Page object at 0x0000023C4C50BC90>]
-2024-06-01 23:37:24,597 CPU 2 status: [<Page.Page object at 0x0000023C4C50BC10>, <Page.Page object at 0x0000023C4C50BCD0>]
-2024-06-01 23:37:24,597 CPU 3 status: [<Page.Page object at 0x0000023C4C50B190>, <Page.Page object at 0x0000023C4C50BD10>]
-2024-06-01 23:37:24,598 ------- FINAL STATISTICS -------
-2024-06-01 23:37:24,598 CPU 0 - Page Faults: 4 (28.57%), Hits: 1 (7.14%), Invalidations: 2 (14.29%)
-2024-06-01 23:37:24,598 CPU 1 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:37:24,598 CPU 2 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:37:24,598 CPU 3 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:37:24,598 Total Page Faults: 13
-2024-06-01 23:37:24,598 Total Hits: 1
-2024-06-01 23:37:24,598 Total Invalidations: 5
-2024-06-01 23:37:24,674 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=OPTIMAL, replication=True
-2024-06-01 23:37:24,674 Processing reference 1: CPU=0, Page=1, Mode=r
-2024-06-01 23:37:24,675 CPU 0: Page fault for page 1
-2024-06-01 23:37:24,675 Processing reference 2: CPU=0, Page=1, Mode=w
-2024-06-01 23:37:24,675 CPU 0: Page 1 loaded from cache
-2024-06-01 23:37:24,675 Processing reference 3: CPU=0, Page=2, Mode=r
-2024-06-01 23:37:24,675 CPU 0: Page fault for page 2
-2024-06-01 23:37:24,675 Processing reference 4: CPU=0, Page=3, Mode=r
-2024-06-01 23:37:24,675 CPU 0: Page fault for page 3
-2024-06-01 23:37:24,675 CPU 0: Cache is full
-2024-06-01 23:37:24,675 CPU 0: Evicting page with algorithm OPTIMAL
-2024-06-01 23:37:24,675 CPU 0: Optimal eviction of page 1
-2024-06-01 23:37:24,675 Processing reference 5: CPU=1, Page=4, Mode=w
-2024-06-01 23:37:24,675 CPU 1: Page fault for page 4
-2024-06-01 23:37:24,675 Processing reference 6: CPU=1, Page=5, Mode=w
-2024-06-01 23:37:24,675 CPU 1: Page fault for page 5
-2024-06-01 23:37:24,675 Processing reference 7: CPU=2, Page=6, Mode=r
-2024-06-01 23:37:24,675 CPU 2: Page fault for page 6
-2024-06-01 23:37:24,675 Processing reference 8: CPU=2, Page=7, Mode=r
-2024-06-01 23:37:24,675 CPU 2: Page fault for page 7
-2024-06-01 23:37:24,676 Processing reference 9: CPU=3, Page=8, Mode=w
-2024-06-01 23:37:24,676 CPU 3: Page fault for page 8
-2024-06-01 23:37:24,676 Processing reference 10: CPU=3, Page=9, Mode=w
-2024-06-01 23:37:24,676 CPU 3: Page fault for page 9
-2024-06-01 23:37:24,676 Processing reference 11: CPU=0, Page=10, Mode=r
-2024-06-01 23:37:24,676 CPU 0: Page fault for page 10
-2024-06-01 23:37:24,676 CPU 0: Cache is full
-2024-06-01 23:37:24,676 CPU 0: Evicting page with algorithm OPTIMAL
-2024-06-01 23:37:24,676 CPU 0: Optimal eviction of page 2
-2024-06-01 23:37:24,676 Processing reference 12: CPU=1, Page=11, Mode=w
-2024-06-01 23:37:24,676 CPU 1: Page fault for page 11
-2024-06-01 23:37:24,676 CPU 1: Cache is full
-2024-06-01 23:37:24,676 CPU 1: Evicting page with algorithm OPTIMAL
-2024-06-01 23:37:24,676 CPU 1: Optimal eviction of page 4
-2024-06-01 23:37:24,676 Processing reference 13: CPU=2, Page=12, Mode=r
-2024-06-01 23:37:24,676 CPU 2: Page fault for page 12
-2024-06-01 23:37:24,676 CPU 2: Cache is full
-2024-06-01 23:37:24,676 CPU 2: Evicting page with algorithm OPTIMAL
-2024-06-01 23:37:24,676 CPU 2: Optimal eviction of page 6
-2024-06-01 23:37:24,676 Processing reference 14: CPU=3, Page=13, Mode=w
-2024-06-01 23:37:24,676 CPU 3: Page fault for page 13
-2024-06-01 23:37:24,676 CPU 3: Cache is full
-2024-06-01 23:37:24,677 CPU 3: Evicting page with algorithm OPTIMAL
-2024-06-01 23:37:24,677 CPU 3: Optimal eviction of page 8
-2024-06-01 23:37:24,677 CPU 0 status: [<Page.Page object at 0x000001BEB2B7B290>, <Page.Page object at 0x000001BEB2B7BBD0>]
-2024-06-01 23:37:24,677 CPU 1 status: [<Page.Page object at 0x000001BEB2B7B590>, <Page.Page object at 0x000001BEB2B7BC90>]
-2024-06-01 23:37:24,677 CPU 2 status: [<Page.Page object at 0x000001BEB2B7BC10>, <Page.Page object at 0x000001BEB2B7BCD0>]
-2024-06-01 23:37:24,677 CPU 3 status: [<Page.Page object at 0x000001BEB2B7B190>, <Page.Page object at 0x000001BEB2B7BD10>]
-2024-06-01 23:37:24,677 ------- FINAL STATISTICS -------
-2024-06-01 23:37:24,677 CPU 0 - Page Faults: 4 (28.57%), Hits: 1 (7.14%), Invalidations: 2 (14.29%)
-2024-06-01 23:37:24,677 CPU 1 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:37:24,677 CPU 2 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:37:24,677 CPU 3 - Page Faults: 3 (21.43%), Hits: 0 (0.00%), Invalidations: 1 (7.14%)
-2024-06-01 23:37:24,677 Total Page Faults: 13
-2024-06-01 23:37:24,677 Total Hits: 1
-2024-06-01 23:37:24,677 Total Invalidations: 5
+2024-06-02 02:18:40,244 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=LRU, replication=True
+2024-06-02 02:18:40,244 ++++ Processing reference 1: CPU=0, Page=1, Mode=r
+2024-06-02 02:18:40,245 Using LRU algorithm.
+2024-06-02 02:18:40,245 CPU 0: Page fault for page 1
+2024-06-02 02:18:40,245 Virtual Memory status: []
+2024-06-02 02:18:40,245 CPU 0 status: [1]
+2024-06-02 02:18:40,245 Pages for CPU 0
+2024-06-02 02:18:40,245 Page(id=1, mode=r, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,245 CPU 1 status: []
+2024-06-02 02:18:40,245 Pages for CPU 1
+2024-06-02 02:18:40,245 CPU 2 status: []
+2024-06-02 02:18:40,245 Pages for CPU 2
+2024-06-02 02:18:40,245 CPU 3 status: []
+2024-06-02 02:18:40,245 Pages for CPU 3
+2024-06-02 02:18:40,245 ++++ Processing reference 2: CPU=0, Page=1, Mode=r
+2024-06-02 02:18:40,245 Using LRU algorithm.
+2024-06-02 02:18:40,245 Page 1 found in cache of CPU 0
+2024-06-02 02:18:40,245 CPU 0: Page 1 loaded from cache
+2024-06-02 02:18:40,245 Virtual Memory status: []
+2024-06-02 02:18:40,245 CPU 0 status: [1]
+2024-06-02 02:18:40,245 Pages for CPU 0
+2024-06-02 02:18:40,245 Page(id=1, mode=r, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,246 CPU 1 status: []
+2024-06-02 02:18:40,246 Pages for CPU 1
+2024-06-02 02:18:40,246 CPU 2 status: []
+2024-06-02 02:18:40,246 Pages for CPU 2
+2024-06-02 02:18:40,246 CPU 3 status: []
+2024-06-02 02:18:40,246 Pages for CPU 3
+2024-06-02 02:18:40,246 ++++ Processing reference 3: CPU=0, Page=1, Mode=w
+2024-06-02 02:18:40,246 Using LRU algorithm.
+2024-06-02 02:18:40,246 Page 1 found in cache of CPU 0
+2024-06-02 02:18:40,246 CPU 0: Page 1 loaded from cache
+2024-06-02 02:18:40,246 Virtual Memory status: []
+2024-06-02 02:18:40,246 CPU 0 status: [1]
+2024-06-02 02:18:40,246 Pages for CPU 0
+2024-06-02 02:18:40,246 Page(id=1, mode=w, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,246 CPU 1 status: []
+2024-06-02 02:18:40,246 Pages for CPU 1
+2024-06-02 02:18:40,246 CPU 2 status: []
+2024-06-02 02:18:40,246 Pages for CPU 2
+2024-06-02 02:18:40,246 CPU 3 status: []
+2024-06-02 02:18:40,246 Pages for CPU 3
+2024-06-02 02:18:40,246 ++++ Processing reference 4: CPU=1, Page=1, Mode=w
+2024-06-02 02:18:40,246 Using LRU algorithm.
+2024-06-02 02:18:40,246 CPU 1: Page fault for page 1
+2024-06-02 02:18:40,247 Page 1 found in cache of CPU 0
+2024-06-02 02:18:40,247 mode is w
+2024-06-02 02:18:40,247 Mode is write, removing page and invalidating rest.
+2024-06-02 02:18:40,247 Virtual Memory status: []
+2024-06-02 02:18:40,247 CPU 0 status: []
+2024-06-02 02:18:40,247 Pages for CPU 0
+2024-06-02 02:18:40,247 CPU 1 status: [1]
+2024-06-02 02:18:40,247 Pages for CPU 1
+2024-06-02 02:18:40,247 Page(id=1, mode=w, status=True, last_access_time=4, replicated=True, origin_cpu=1)
+2024-06-02 02:18:40,247 CPU 2 status: []
+2024-06-02 02:18:40,247 Pages for CPU 2
+2024-06-02 02:18:40,247 CPU 3 status: []
+2024-06-02 02:18:40,247 Pages for CPU 3
+2024-06-02 02:18:40,247 ++++ Processing reference 5: CPU=2, Page=1, Mode=w
+2024-06-02 02:18:40,247 Using LRU algorithm.
+2024-06-02 02:18:40,247 CPU 2: Page fault for page 1
+2024-06-02 02:18:40,247 Page 1 found in cache of CPU 1
+2024-06-02 02:18:40,247 mode is w
+2024-06-02 02:18:40,247 Mode is write, removing page and invalidating rest.
+2024-06-02 02:18:40,247 Virtual Memory status: []
+2024-06-02 02:18:40,247 CPU 0 status: []
+2024-06-02 02:18:40,247 Pages for CPU 0
+2024-06-02 02:18:40,247 CPU 1 status: []
+2024-06-02 02:18:40,248 Pages for CPU 1
+2024-06-02 02:18:40,248 CPU 2 status: [1]
+2024-06-02 02:18:40,248 Pages for CPU 2
+2024-06-02 02:18:40,248 Page(id=1, mode=w, status=True, last_access_time=5, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,248 CPU 3 status: []
+2024-06-02 02:18:40,248 Pages for CPU 3
+2024-06-02 02:18:40,248 ++++ Processing reference 6: CPU=3, Page=1, Mode=r
+2024-06-02 02:18:40,248 Using LRU algorithm.
+2024-06-02 02:18:40,248 CPU 3: Page fault for page 1
+2024-06-02 02:18:40,248 Page 1 found in cache of CPU 2
+2024-06-02 02:18:40,248 mode is r
+2024-06-02 02:18:40,248 Mode is read only, copying page
+2024-06-02 02:18:40,248 Virtual Memory status: []
+2024-06-02 02:18:40,248 CPU 0 status: []
+2024-06-02 02:18:40,248 Pages for CPU 0
+2024-06-02 02:18:40,248 CPU 1 status: []
+2024-06-02 02:18:40,248 Pages for CPU 1
+2024-06-02 02:18:40,248 CPU 2 status: [1]
+2024-06-02 02:18:40,248 Pages for CPU 2
+2024-06-02 02:18:40,248 Page(id=1, mode=w, status=True, last_access_time=5, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,248 CPU 3 status: [1]
+2024-06-02 02:18:40,249 Pages for CPU 3
+2024-06-02 02:18:40,249 Page(id=1, mode=r, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,249 ++++ Processing reference 7: CPU=3, Page=1, Mode=w
+2024-06-02 02:18:40,249 Using LRU algorithm.
+2024-06-02 02:18:40,249 Page 1 found in cache of CPU 3
+2024-06-02 02:18:40,249 Page 1 invalidated in CPU 2.
+2024-06-02 02:18:40,249 CPU 3: Page 1 loaded from cache
+2024-06-02 02:18:40,249 Virtual Memory status: []
+2024-06-02 02:18:40,249 CPU 0 status: []
+2024-06-02 02:18:40,249 Pages for CPU 0
+2024-06-02 02:18:40,249 CPU 1 status: []
+2024-06-02 02:18:40,249 Pages for CPU 1
+2024-06-02 02:18:40,249 CPU 2 status: [1]
+2024-06-02 02:18:40,249 Pages for CPU 2
+2024-06-02 02:18:40,249 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,249 CPU 3 status: [1]
+2024-06-02 02:18:40,249 Pages for CPU 3
+2024-06-02 02:18:40,249 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,249 ++++ Processing reference 8: CPU=0, Page=2, Mode=r
+2024-06-02 02:18:40,249 Using LRU algorithm.
+2024-06-02 02:18:40,249 CPU 0: Page fault for page 2
+2024-06-02 02:18:40,249 Virtual Memory status: []
+2024-06-02 02:18:40,249 CPU 0 status: [2]
+2024-06-02 02:18:40,250 Pages for CPU 0
+2024-06-02 02:18:40,250 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,250 CPU 1 status: []
+2024-06-02 02:18:40,250 Pages for CPU 1
+2024-06-02 02:18:40,250 CPU 2 status: [1]
+2024-06-02 02:18:40,250 Pages for CPU 2
+2024-06-02 02:18:40,250 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,250 CPU 3 status: [1]
+2024-06-02 02:18:40,250 Pages for CPU 3
+2024-06-02 02:18:40,250 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,250 ++++ Processing reference 9: CPU=0, Page=3, Mode=r
+2024-06-02 02:18:40,250 Using LRU algorithm.
+2024-06-02 02:18:40,250 CPU 0: Page fault for page 3
+2024-06-02 02:18:40,250 Virtual Memory status: []
+2024-06-02 02:18:40,250 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,250 Pages for CPU 0
+2024-06-02 02:18:40,250 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,250 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,250 CPU 1 status: []
+2024-06-02 02:18:40,250 Pages for CPU 1
+2024-06-02 02:18:40,250 CPU 2 status: [1]
+2024-06-02 02:18:40,251 Pages for CPU 2
+2024-06-02 02:18:40,251 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,251 CPU 3 status: [1]
+2024-06-02 02:18:40,251 Pages for CPU 3
+2024-06-02 02:18:40,251 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,251 ++++ Processing reference 10: CPU=1, Page=4, Mode=w
+2024-06-02 02:18:40,251 Using LRU algorithm.
+2024-06-02 02:18:40,251 CPU 1: Page fault for page 4
+2024-06-02 02:18:40,251 Virtual Memory status: []
+2024-06-02 02:18:40,251 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,251 Pages for CPU 0
+2024-06-02 02:18:40,251 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,251 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,251 CPU 1 status: [4]
+2024-06-02 02:18:40,251 Pages for CPU 1
+2024-06-02 02:18:40,251 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,251 CPU 2 status: [1]
+2024-06-02 02:18:40,251 Pages for CPU 2
+2024-06-02 02:18:40,251 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,251 CPU 3 status: [1]
+2024-06-02 02:18:40,251 Pages for CPU 3
+2024-06-02 02:18:40,251 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,252 ++++ Processing reference 11: CPU=1, Page=5, Mode=w
+2024-06-02 02:18:40,252 Using LRU algorithm.
+2024-06-02 02:18:40,252 CPU 1: Page fault for page 5
+2024-06-02 02:18:40,252 Virtual Memory status: []
+2024-06-02 02:18:40,252 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,252 Pages for CPU 0
+2024-06-02 02:18:40,252 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,252 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,252 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,252 Pages for CPU 1
+2024-06-02 02:18:40,252 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,252 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,252 CPU 2 status: [1]
+2024-06-02 02:18:40,252 Pages for CPU 2
+2024-06-02 02:18:40,252 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,252 CPU 3 status: [1]
+2024-06-02 02:18:40,252 Pages for CPU 3
+2024-06-02 02:18:40,252 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,252 ++++ Processing reference 12: CPU=2, Page=6, Mode=r
+2024-06-02 02:18:40,252 Using LRU algorithm.
+2024-06-02 02:18:40,252 CPU 2: Page fault for page 6
+2024-06-02 02:18:40,253 Virtual Memory status: []
+2024-06-02 02:18:40,253 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,253 Pages for CPU 0
+2024-06-02 02:18:40,253 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,253 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,253 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,253 Pages for CPU 1
+2024-06-02 02:18:40,253 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,253 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,253 CPU 2 status: [1, 6]
+2024-06-02 02:18:40,253 Pages for CPU 2
+2024-06-02 02:18:40,253 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,253 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,253 CPU 3 status: [1]
+2024-06-02 02:18:40,253 Pages for CPU 3
+2024-06-02 02:18:40,253 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,253 ++++ Processing reference 13: CPU=2, Page=7, Mode=r
+2024-06-02 02:18:40,253 Using LRU algorithm.
+2024-06-02 02:18:40,253 CPU 2: Page fault for page 7
+2024-06-02 02:18:40,253 CPU 2: Cache is full
+2024-06-02 02:18:40,253 CPU 2: Evicting page with algorithm LRU
+2024-06-02 02:18:40,253 CPU 2: LRU eviction of page 1
+2024-06-02 02:18:40,254 Virtual Memory status: [1]
+2024-06-02 02:18:40,254 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,254 Pages for CPU 0
+2024-06-02 02:18:40,254 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,254 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,254 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,254 Pages for CPU 1
+2024-06-02 02:18:40,254 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,254 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,254 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,254 Pages for CPU 2
+2024-06-02 02:18:40,254 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,257 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,257 CPU 3 status: [1]
+2024-06-02 02:18:40,257 Pages for CPU 3
+2024-06-02 02:18:40,257 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,257 ++++ Processing reference 14: CPU=3, Page=8, Mode=w
+2024-06-02 02:18:40,257 Using LRU algorithm.
+2024-06-02 02:18:40,257 CPU 3: Page fault for page 8
+2024-06-02 02:18:40,257 Virtual Memory status: [1]
+2024-06-02 02:18:40,257 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,257 Pages for CPU 0
+2024-06-02 02:18:40,257 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,257 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,257 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,257 Pages for CPU 1
+2024-06-02 02:18:40,257 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,257 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,257 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,258 Pages for CPU 2
+2024-06-02 02:18:40,258 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,258 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,258 CPU 3 status: [1, 8]
+2024-06-02 02:18:40,258 Pages for CPU 3
+2024-06-02 02:18:40,258 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,258 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,258 ++++ Processing reference 15: CPU=3, Page=9, Mode=w
+2024-06-02 02:18:40,258 Using LRU algorithm.
+2024-06-02 02:18:40,258 CPU 3: Page fault for page 9
+2024-06-02 02:18:40,258 CPU 3: Cache is full
+2024-06-02 02:18:40,258 CPU 3: Evicting page with algorithm LRU
+2024-06-02 02:18:40,258 CPU 3: LRU eviction of page 1
+2024-06-02 02:18:40,258 Virtual Memory status: [1, 1]
+2024-06-02 02:18:40,258 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,258 Pages for CPU 0
+2024-06-02 02:18:40,258 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,258 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,258 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,258 Pages for CPU 1
+2024-06-02 02:18:40,258 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,258 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,259 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,259 Pages for CPU 2
+2024-06-02 02:18:40,259 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,259 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,259 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,259 Pages for CPU 3
+2024-06-02 02:18:40,259 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,259 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,259 ++++ Processing reference 16: CPU=0, Page=10, Mode=r
+2024-06-02 02:18:40,259 Using LRU algorithm.
+2024-06-02 02:18:40,259 CPU 0: Page fault for page 10
+2024-06-02 02:18:40,259 CPU 0: Cache is full
+2024-06-02 02:18:40,259 CPU 0: Evicting page with algorithm LRU
+2024-06-02 02:18:40,259 CPU 0: LRU eviction of page 2
+2024-06-02 02:18:40,259 Virtual Memory status: [1, 1, 2]
+2024-06-02 02:18:40,259 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,259 Pages for CPU 0
+2024-06-02 02:18:40,259 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,259 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,259 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,260 Pages for CPU 1
+2024-06-02 02:18:40,260 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,260 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,260 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,260 Pages for CPU 2
+2024-06-02 02:18:40,260 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,260 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,260 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,260 Pages for CPU 3
+2024-06-02 02:18:40,260 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,260 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,260 ++++ Processing reference 17: CPU=1, Page=11, Mode=w
+2024-06-02 02:18:40,260 Using LRU algorithm.
+2024-06-02 02:18:40,260 CPU 1: Page fault for page 11
+2024-06-02 02:18:40,260 CPU 1: Cache is full
+2024-06-02 02:18:40,260 CPU 1: Evicting page with algorithm LRU
+2024-06-02 02:18:40,260 CPU 1: LRU eviction of page 4
+2024-06-02 02:18:40,260 Virtual Memory status: [1, 1, 2, 4]
+2024-06-02 02:18:40,260 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,260 Pages for CPU 0
+2024-06-02 02:18:40,264 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,264 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,264 CPU 1 status: [5, 11]
+2024-06-02 02:18:40,264 Pages for CPU 1
+2024-06-02 02:18:40,264 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,264 Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,265 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,265 Pages for CPU 2
+2024-06-02 02:18:40,265 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,265 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,265 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,265 Pages for CPU 3
+2024-06-02 02:18:40,265 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,265 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,265 ++++ Processing reference 18: CPU=2, Page=12, Mode=r
+2024-06-02 02:18:40,265 Using LRU algorithm.
+2024-06-02 02:18:40,265 CPU 2: Page fault for page 12
+2024-06-02 02:18:40,265 CPU 2: Cache is full
+2024-06-02 02:18:40,265 CPU 2: Evicting page with algorithm LRU
+2024-06-02 02:18:40,265 CPU 2: LRU eviction of page 6
+2024-06-02 02:18:40,265 Virtual Memory status: [1, 1, 2, 4, 6]
+2024-06-02 02:18:40,265 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,265 Pages for CPU 0
+2024-06-02 02:18:40,265 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,265 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,265 CPU 1 status: [5, 11]
+2024-06-02 02:18:40,265 Pages for CPU 1
+2024-06-02 02:18:40,265 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,265 Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,266 CPU 2 status: [7, 12]
+2024-06-02 02:18:40,266 Pages for CPU 2
+2024-06-02 02:18:40,266 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,266 Page(id=12, mode=r, status=True, last_access_time=18, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,266 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,266 Pages for CPU 3
+2024-06-02 02:18:40,266 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,266 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,266 ++++ Processing reference 19: CPU=3, Page=13, Mode=w
+2024-06-02 02:18:40,266 Using LRU algorithm.
+2024-06-02 02:18:40,266 CPU 3: Page fault for page 13
+2024-06-02 02:18:40,266 CPU 3: Cache is full
+2024-06-02 02:18:40,266 CPU 3: Evicting page with algorithm LRU
+2024-06-02 02:18:40,266 CPU 3: LRU eviction of page 8
+2024-06-02 02:18:40,266 Virtual Memory status: [1, 1, 2, 4, 6, 8]
+2024-06-02 02:18:40,266 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,266 Pages for CPU 0
+2024-06-02 02:18:40,266 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,266 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,266 CPU 1 status: [5, 11]
+2024-06-02 02:18:40,266 Pages for CPU 1
+2024-06-02 02:18:40,266 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,267 Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,267 CPU 2 status: [7, 12]
+2024-06-02 02:18:40,267 Pages for CPU 2
+2024-06-02 02:18:40,267 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,267 Page(id=12, mode=r, status=True, last_access_time=18, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,267 CPU 3 status: [9, 13]
+2024-06-02 02:18:40,267 Pages for CPU 3
+2024-06-02 02:18:40,267 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,267 Page(id=13, mode=w, status=True, last_access_time=19, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,267 ------- STATISTICS -------
+2024-06-02 02:18:40,267 CPU 0 - Page Faults: 4 (21.05%), Hits: 2 (10.53%), Invalidations: 0 (0.00%)
+2024-06-02 02:18:40,267 CPU 1 - Page Faults: 4 (21.05%), Hits: 0 (0.00%), Invalidations: 0 (0.00%)
+2024-06-02 02:18:40,267 CPU 2 - Page Faults: 4 (21.05%), Hits: 0 (0.00%), Invalidations: 1 (5.26%)
+2024-06-02 02:18:40,267 CPU 3 - Page Faults: 4 (21.05%), Hits: 1 (5.26%), Invalidations: 0 (0.00%)
+2024-06-02 02:18:40,267 Total Page Faults: 16
+2024-06-02 02:18:40,267 Total Hits: 3
+2024-06-02 02:18:40,267 Total Invalidations: 1
+2024-06-02 02:18:40,267 ------- END -------
+2024-06-02 02:18:40,350 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=FIFO, replication=True
+2024-06-02 02:18:40,350 ++++ Processing reference 1: CPU=0, Page=1, Mode=r
+2024-06-02 02:18:40,350 Using FIFO algorithm.
+2024-06-02 02:18:40,350 CPU 0: Page fault for page 1
+2024-06-02 02:18:40,350 Virtual Memory status: []
+2024-06-02 02:18:40,351 CPU 0 status: [1]
+2024-06-02 02:18:40,351 Pages for CPU 0
+2024-06-02 02:18:40,351 Page(id=1, mode=r, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,351 CPU 1 status: []
+2024-06-02 02:18:40,351 Pages for CPU 1
+2024-06-02 02:18:40,351 CPU 2 status: []
+2024-06-02 02:18:40,351 Pages for CPU 2
+2024-06-02 02:18:40,351 CPU 3 status: []
+2024-06-02 02:18:40,351 Pages for CPU 3
+2024-06-02 02:18:40,351 ++++ Processing reference 2: CPU=0, Page=1, Mode=r
+2024-06-02 02:18:40,351 Using FIFO algorithm.
+2024-06-02 02:18:40,351 Page 1 found in cache of CPU 0
+2024-06-02 02:18:40,351 CPU 0: Page 1 loaded from cache
+2024-06-02 02:18:40,351 Virtual Memory status: []
+2024-06-02 02:18:40,351 CPU 0 status: [1]
+2024-06-02 02:18:40,351 Pages for CPU 0
+2024-06-02 02:18:40,351 Page(id=1, mode=r, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,352 CPU 1 status: []
+2024-06-02 02:18:40,352 Pages for CPU 1
+2024-06-02 02:18:40,352 CPU 2 status: []
+2024-06-02 02:18:40,352 Pages for CPU 2
+2024-06-02 02:18:40,352 CPU 3 status: []
+2024-06-02 02:18:40,352 Pages for CPU 3
+2024-06-02 02:18:40,352 ++++ Processing reference 3: CPU=0, Page=1, Mode=w
+2024-06-02 02:18:40,352 Using FIFO algorithm.
+2024-06-02 02:18:40,352 Page 1 found in cache of CPU 0
+2024-06-02 02:18:40,352 CPU 0: Page 1 loaded from cache
+2024-06-02 02:18:40,352 Virtual Memory status: []
+2024-06-02 02:18:40,352 CPU 0 status: [1]
+2024-06-02 02:18:40,352 Pages for CPU 0
+2024-06-02 02:18:40,352 Page(id=1, mode=w, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,352 CPU 1 status: []
+2024-06-02 02:18:40,352 Pages for CPU 1
+2024-06-02 02:18:40,353 CPU 2 status: []
+2024-06-02 02:18:40,353 Pages for CPU 2
+2024-06-02 02:18:40,353 CPU 3 status: []
+2024-06-02 02:18:40,353 Pages for CPU 3
+2024-06-02 02:18:40,353 ++++ Processing reference 4: CPU=1, Page=1, Mode=w
+2024-06-02 02:18:40,353 Using FIFO algorithm.
+2024-06-02 02:18:40,353 CPU 1: Page fault for page 1
+2024-06-02 02:18:40,353 Page 1 found in cache of CPU 0
+2024-06-02 02:18:40,353 mode is w
+2024-06-02 02:18:40,353 Mode is write, removing page and invalidating rest.
+2024-06-02 02:18:40,353 Virtual Memory status: []
+2024-06-02 02:18:40,353 CPU 0 status: []
+2024-06-02 02:18:40,353 Pages for CPU 0
+2024-06-02 02:18:40,353 CPU 1 status: [1]
+2024-06-02 02:18:40,353 Pages for CPU 1
+2024-06-02 02:18:40,353 Page(id=1, mode=w, status=True, last_access_time=4, replicated=True, origin_cpu=1)
+2024-06-02 02:18:40,353 CPU 2 status: []
+2024-06-02 02:18:40,353 Pages for CPU 2
+2024-06-02 02:18:40,354 CPU 3 status: []
+2024-06-02 02:18:40,354 Pages for CPU 3
+2024-06-02 02:18:40,354 ++++ Processing reference 5: CPU=2, Page=1, Mode=w
+2024-06-02 02:18:40,354 Using FIFO algorithm.
+2024-06-02 02:18:40,354 CPU 2: Page fault for page 1
+2024-06-02 02:18:40,354 Page 1 found in cache of CPU 1
+2024-06-02 02:18:40,354 mode is w
+2024-06-02 02:18:40,354 Mode is write, removing page and invalidating rest.
+2024-06-02 02:18:40,354 Virtual Memory status: []
+2024-06-02 02:18:40,354 CPU 0 status: []
+2024-06-02 02:18:40,354 Pages for CPU 0
+2024-06-02 02:18:40,354 CPU 1 status: []
+2024-06-02 02:18:40,354 Pages for CPU 1
+2024-06-02 02:18:40,354 CPU 2 status: [1]
+2024-06-02 02:18:40,354 Pages for CPU 2
+2024-06-02 02:18:40,354 Page(id=1, mode=w, status=True, last_access_time=5, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,354 CPU 3 status: []
+2024-06-02 02:18:40,355 Pages for CPU 3
+2024-06-02 02:18:40,355 ++++ Processing reference 6: CPU=3, Page=1, Mode=r
+2024-06-02 02:18:40,355 Using FIFO algorithm.
+2024-06-02 02:18:40,355 CPU 3: Page fault for page 1
+2024-06-02 02:18:40,355 Page 1 found in cache of CPU 2
+2024-06-02 02:18:40,355 mode is r
+2024-06-02 02:18:40,355 Mode is read only, copying page
+2024-06-02 02:18:40,355 Virtual Memory status: []
+2024-06-02 02:18:40,355 CPU 0 status: []
+2024-06-02 02:18:40,355 Pages for CPU 0
+2024-06-02 02:18:40,355 CPU 1 status: []
+2024-06-02 02:18:40,355 Pages for CPU 1
+2024-06-02 02:18:40,355 CPU 2 status: [1]
+2024-06-02 02:18:40,355 Pages for CPU 2
+2024-06-02 02:18:40,355 Page(id=1, mode=w, status=True, last_access_time=5, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,355 CPU 3 status: [1]
+2024-06-02 02:18:40,355 Pages for CPU 3
+2024-06-02 02:18:40,356 Page(id=1, mode=r, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,356 ++++ Processing reference 7: CPU=3, Page=1, Mode=w
+2024-06-02 02:18:40,356 Using FIFO algorithm.
+2024-06-02 02:18:40,356 Page 1 found in cache of CPU 3
+2024-06-02 02:18:40,356 Page 1 invalidated in CPU 2.
+2024-06-02 02:18:40,356 CPU 3: Page 1 loaded from cache
+2024-06-02 02:18:40,356 Virtual Memory status: []
+2024-06-02 02:18:40,356 CPU 0 status: []
+2024-06-02 02:18:40,356 Pages for CPU 0
+2024-06-02 02:18:40,356 CPU 1 status: []
+2024-06-02 02:18:40,356 Pages for CPU 1
+2024-06-02 02:18:40,356 CPU 2 status: [1]
+2024-06-02 02:18:40,356 Pages for CPU 2
+2024-06-02 02:18:40,356 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,356 CPU 3 status: [1]
+2024-06-02 02:18:40,356 Pages for CPU 3
+2024-06-02 02:18:40,356 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,357 ++++ Processing reference 8: CPU=0, Page=2, Mode=r
+2024-06-02 02:18:40,357 Using FIFO algorithm.
+2024-06-02 02:18:40,357 CPU 0: Page fault for page 2
+2024-06-02 02:18:40,357 Virtual Memory status: []
+2024-06-02 02:18:40,357 CPU 0 status: [2]
+2024-06-02 02:18:40,357 Pages for CPU 0
+2024-06-02 02:18:40,357 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,357 CPU 1 status: []
+2024-06-02 02:18:40,357 Pages for CPU 1
+2024-06-02 02:18:40,357 CPU 2 status: [1]
+2024-06-02 02:18:40,357 Pages for CPU 2
+2024-06-02 02:18:40,357 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,357 CPU 3 status: [1]
+2024-06-02 02:18:40,357 Pages for CPU 3
+2024-06-02 02:18:40,357 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,357 ++++ Processing reference 9: CPU=0, Page=3, Mode=r
+2024-06-02 02:18:40,357 Using FIFO algorithm.
+2024-06-02 02:18:40,358 CPU 0: Page fault for page 3
+2024-06-02 02:18:40,358 Virtual Memory status: []
+2024-06-02 02:18:40,358 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,358 Pages for CPU 0
+2024-06-02 02:18:40,358 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,358 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,358 CPU 1 status: []
+2024-06-02 02:18:40,358 Pages for CPU 1
+2024-06-02 02:18:40,358 CPU 2 status: [1]
+2024-06-02 02:18:40,358 Pages for CPU 2
+2024-06-02 02:18:40,358 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,358 CPU 3 status: [1]
+2024-06-02 02:18:40,358 Pages for CPU 3
+2024-06-02 02:18:40,358 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,358 ++++ Processing reference 10: CPU=1, Page=4, Mode=w
+2024-06-02 02:18:40,358 Using FIFO algorithm.
+2024-06-02 02:18:40,358 CPU 1: Page fault for page 4
+2024-06-02 02:18:40,358 Virtual Memory status: []
+2024-06-02 02:18:40,358 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,358 Pages for CPU 0
+2024-06-02 02:18:40,359 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,359 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,359 CPU 1 status: [4]
+2024-06-02 02:18:40,359 Pages for CPU 1
+2024-06-02 02:18:40,359 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,359 CPU 2 status: [1]
+2024-06-02 02:18:40,359 Pages for CPU 2
+2024-06-02 02:18:40,359 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,359 CPU 3 status: [1]
+2024-06-02 02:18:40,359 Pages for CPU 3
+2024-06-02 02:18:40,359 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,359 ++++ Processing reference 11: CPU=1, Page=5, Mode=w
+2024-06-02 02:18:40,359 Using FIFO algorithm.
+2024-06-02 02:18:40,359 CPU 1: Page fault for page 5
+2024-06-02 02:18:40,359 Virtual Memory status: []
+2024-06-02 02:18:40,359 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,359 Pages for CPU 0
+2024-06-02 02:18:40,359 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,359 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,359 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,359 Pages for CPU 1
+2024-06-02 02:18:40,359 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,359 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,360 CPU 2 status: [1]
+2024-06-02 02:18:40,360 Pages for CPU 2
+2024-06-02 02:18:40,360 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,360 CPU 3 status: [1]
+2024-06-02 02:18:40,360 Pages for CPU 3
+2024-06-02 02:18:40,360 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,360 ++++ Processing reference 12: CPU=2, Page=6, Mode=r
+2024-06-02 02:18:40,360 Using FIFO algorithm.
+2024-06-02 02:18:40,360 CPU 2: Page fault for page 6
+2024-06-02 02:18:40,360 Virtual Memory status: []
+2024-06-02 02:18:40,360 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,360 Pages for CPU 0
+2024-06-02 02:18:40,360 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,360 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,360 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,360 Pages for CPU 1
+2024-06-02 02:18:40,360 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,360 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,360 CPU 2 status: [1, 6]
+2024-06-02 02:18:40,360 Pages for CPU 2
+2024-06-02 02:18:40,360 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,360 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,361 CPU 3 status: [1]
+2024-06-02 02:18:40,361 Pages for CPU 3
+2024-06-02 02:18:40,361 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,361 ++++ Processing reference 13: CPU=2, Page=7, Mode=r
+2024-06-02 02:18:40,361 Using FIFO algorithm.
+2024-06-02 02:18:40,361 CPU 2: Page fault for page 7
+2024-06-02 02:18:40,361 CPU 2: Cache is full
+2024-06-02 02:18:40,361 CPU 2: Evicting page with algorithm FIFO
+2024-06-02 02:18:40,361 CPU 2: FIFO eviction of page 1
+2024-06-02 02:18:40,361 Virtual Memory status: [1]
+2024-06-02 02:18:40,361 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,361 Pages for CPU 0
+2024-06-02 02:18:40,362 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,362 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,362 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,362 Pages for CPU 1
+2024-06-02 02:18:40,362 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,362 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,362 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,362 Pages for CPU 2
+2024-06-02 02:18:40,362 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,362 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,362 CPU 3 status: [1]
+2024-06-02 02:18:40,362 Pages for CPU 3
+2024-06-02 02:18:40,362 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,362 ++++ Processing reference 14: CPU=3, Page=8, Mode=w
+2024-06-02 02:18:40,362 Using FIFO algorithm.
+2024-06-02 02:18:40,362 CPU 3: Page fault for page 8
+2024-06-02 02:18:40,362 Virtual Memory status: [1]
+2024-06-02 02:18:40,362 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,362 Pages for CPU 0
+2024-06-02 02:18:40,362 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,362 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,362 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,362 Pages for CPU 1
+2024-06-02 02:18:40,363 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,363 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,363 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,363 Pages for CPU 2
+2024-06-02 02:18:40,363 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,363 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,363 CPU 3 status: [1, 8]
+2024-06-02 02:18:40,363 Pages for CPU 3
+2024-06-02 02:18:40,363 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,363 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,363 ++++ Processing reference 15: CPU=3, Page=9, Mode=w
+2024-06-02 02:18:40,363 Using FIFO algorithm.
+2024-06-02 02:18:40,363 CPU 3: Page fault for page 9
+2024-06-02 02:18:40,363 CPU 3: Cache is full
+2024-06-02 02:18:40,363 CPU 3: Evicting page with algorithm FIFO
+2024-06-02 02:18:40,363 CPU 3: FIFO eviction of page 1
+2024-06-02 02:18:40,363 Virtual Memory status: [1, 1]
+2024-06-02 02:18:40,363 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,363 Pages for CPU 0
+2024-06-02 02:18:40,363 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,364 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,364 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,364 Pages for CPU 1
+2024-06-02 02:18:40,364 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,364 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,364 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,364 Pages for CPU 2
+2024-06-02 02:18:40,364 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,364 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,364 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,364 Pages for CPU 3
+2024-06-02 02:18:40,364 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,364 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,364 ++++ Processing reference 16: CPU=0, Page=10, Mode=r
+2024-06-02 02:18:40,364 Using FIFO algorithm.
+2024-06-02 02:18:40,364 CPU 0: Page fault for page 10
+2024-06-02 02:18:40,364 CPU 0: Cache is full
+2024-06-02 02:18:40,364 CPU 0: Evicting page with algorithm FIFO
+2024-06-02 02:18:40,364 CPU 0: FIFO eviction of page 2
+2024-06-02 02:18:40,364 Virtual Memory status: [1, 1, 2]
+2024-06-02 02:18:40,364 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,364 Pages for CPU 0
+2024-06-02 02:18:40,364 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,365 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,365 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,369 Pages for CPU 1
+2024-06-02 02:18:40,369 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,369 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,369 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,369 Pages for CPU 2
+2024-06-02 02:18:40,369 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,370 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,370 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,370 Pages for CPU 3
+2024-06-02 02:18:40,370 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,370 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,370 ++++ Processing reference 17: CPU=1, Page=11, Mode=w
+2024-06-02 02:18:40,370 Using FIFO algorithm.
+2024-06-02 02:18:40,370 CPU 1: Page fault for page 11
+2024-06-02 02:18:40,370 CPU 1: Cache is full
+2024-06-02 02:18:40,370 CPU 1: Evicting page with algorithm FIFO
+2024-06-02 02:18:40,370 CPU 1: FIFO eviction of page 4
+2024-06-02 02:18:40,370 Virtual Memory status: [1, 1, 2, 4]
+2024-06-02 02:18:40,370 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,370 Pages for CPU 0
+2024-06-02 02:18:40,370 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,370 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,370 CPU 1 status: [5, 11]
+2024-06-02 02:18:40,370 Pages for CPU 1
+2024-06-02 02:18:40,370 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,371 Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,371 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,371 Pages for CPU 2
+2024-06-02 02:18:40,371 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,371 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,371 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,371 Pages for CPU 3
+2024-06-02 02:18:40,371 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,371 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,371 ++++ Processing reference 18: CPU=2, Page=12, Mode=r
+2024-06-02 02:18:40,371 Using FIFO algorithm.
+2024-06-02 02:18:40,371 CPU 2: Page fault for page 12
+2024-06-02 02:18:40,371 CPU 2: Cache is full
+2024-06-02 02:18:40,371 CPU 2: Evicting page with algorithm FIFO
+2024-06-02 02:18:40,371 CPU 2: FIFO eviction of page 6
+2024-06-02 02:18:40,371 Virtual Memory status: [1, 1, 2, 4, 6]
+2024-06-02 02:18:40,371 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,372 Pages for CPU 0
+2024-06-02 02:18:40,372 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,372 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,372 CPU 1 status: [5, 11]
+2024-06-02 02:18:40,372 Pages for CPU 1
+2024-06-02 02:18:40,372 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,372 Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,372 CPU 2 status: [7, 12]
+2024-06-02 02:18:40,372 Pages for CPU 2
+2024-06-02 02:18:40,372 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,372 Page(id=12, mode=r, status=True, last_access_time=18, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,372 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,372 Pages for CPU 3
+2024-06-02 02:18:40,372 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,372 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,373 ++++ Processing reference 19: CPU=3, Page=13, Mode=w
+2024-06-02 02:18:40,373 Using FIFO algorithm.
+2024-06-02 02:18:40,373 CPU 3: Page fault for page 13
+2024-06-02 02:18:40,373 CPU 3: Cache is full
+2024-06-02 02:18:40,373 CPU 3: Evicting page with algorithm FIFO
+2024-06-02 02:18:40,373 CPU 3: FIFO eviction of page 8
+2024-06-02 02:18:40,373 Virtual Memory status: [1, 1, 2, 4, 6, 8]
+2024-06-02 02:18:40,373 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,373 Pages for CPU 0
+2024-06-02 02:18:40,373 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,373 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,373 CPU 1 status: [5, 11]
+2024-06-02 02:18:40,373 Pages for CPU 1
+2024-06-02 02:18:40,373 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,373 Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,373 CPU 2 status: [7, 12]
+2024-06-02 02:18:40,374 Pages for CPU 2
+2024-06-02 02:18:40,374 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,377 Page(id=12, mode=r, status=True, last_access_time=18, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,378 CPU 3 status: [9, 13]
+2024-06-02 02:18:40,378 Pages for CPU 3
+2024-06-02 02:18:40,378 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,378 Page(id=13, mode=w, status=True, last_access_time=19, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,378 ------- STATISTICS -------
+2024-06-02 02:18:40,378 CPU 0 - Page Faults: 4 (21.05%), Hits: 2 (10.53%), Invalidations: 0 (0.00%)
+2024-06-02 02:18:40,378 CPU 1 - Page Faults: 4 (21.05%), Hits: 0 (0.00%), Invalidations: 0 (0.00%)
+2024-06-02 02:18:40,378 CPU 2 - Page Faults: 4 (21.05%), Hits: 0 (0.00%), Invalidations: 1 (5.26%)
+2024-06-02 02:18:40,378 CPU 3 - Page Faults: 4 (21.05%), Hits: 1 (5.26%), Invalidations: 0 (0.00%)
+2024-06-02 02:18:40,378 Total Page Faults: 16
+2024-06-02 02:18:40,378 Total Hits: 3
+2024-06-02 02:18:40,378 Total Invalidations: 1
+2024-06-02 02:18:40,378 ------- END -------
+2024-06-02 02:18:40,465 Initialized DSM with configuration: Total_pages=16, num_cpus=4, pages_per_cpu=2, algorithm=OPTIMAL, replication=True
+2024-06-02 02:18:40,465 ++++ Processing reference 1: CPU=0, Page=1, Mode=r
+2024-06-02 02:18:40,465 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,465 CPU 0: Page fault for page 1
+2024-06-02 02:18:40,465 Virtual Memory status: []
+2024-06-02 02:18:40,465 CPU 0 status: [1]
+2024-06-02 02:18:40,465 Pages for CPU 0
+2024-06-02 02:18:40,465 Page(id=1, mode=r, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,465 CPU 1 status: []
+2024-06-02 02:18:40,465 Pages for CPU 1
+2024-06-02 02:18:40,466 CPU 2 status: []
+2024-06-02 02:18:40,466 Pages for CPU 2
+2024-06-02 02:18:40,466 CPU 3 status: []
+2024-06-02 02:18:40,466 Pages for CPU 3
+2024-06-02 02:18:40,466 ++++ Processing reference 2: CPU=0, Page=1, Mode=r
+2024-06-02 02:18:40,466 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,466 Page 1 found in cache of CPU 0
+2024-06-02 02:18:40,466 CPU 0: Page 1 loaded from cache
+2024-06-02 02:18:40,466 Virtual Memory status: []
+2024-06-02 02:18:40,466 CPU 0 status: [1]
+2024-06-02 02:18:40,466 Pages for CPU 0
+2024-06-02 02:18:40,466 Page(id=1, mode=r, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,466 CPU 1 status: []
+2024-06-02 02:18:40,466 Pages for CPU 1
+2024-06-02 02:18:40,466 CPU 2 status: []
+2024-06-02 02:18:40,466 Pages for CPU 2
+2024-06-02 02:18:40,466 CPU 3 status: []
+2024-06-02 02:18:40,466 Pages for CPU 3
+2024-06-02 02:18:40,466 ++++ Processing reference 3: CPU=0, Page=1, Mode=w
+2024-06-02 02:18:40,466 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,466 Page 1 found in cache of CPU 0
+2024-06-02 02:18:40,466 CPU 0: Page 1 loaded from cache
+2024-06-02 02:18:40,466 Virtual Memory status: []
+2024-06-02 02:18:40,467 CPU 0 status: [1]
+2024-06-02 02:18:40,467 Pages for CPU 0
+2024-06-02 02:18:40,467 Page(id=1, mode=w, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,467 CPU 1 status: []
+2024-06-02 02:18:40,467 Pages for CPU 1
+2024-06-02 02:18:40,467 CPU 2 status: []
+2024-06-02 02:18:40,467 Pages for CPU 2
+2024-06-02 02:18:40,467 CPU 3 status: []
+2024-06-02 02:18:40,467 Pages for CPU 3
+2024-06-02 02:18:40,467 ++++ Processing reference 4: CPU=1, Page=1, Mode=w
+2024-06-02 02:18:40,467 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,467 CPU 1: Page fault for page 1
+2024-06-02 02:18:40,467 Page 1 found in cache of CPU 0
+2024-06-02 02:18:40,467 mode is w
+2024-06-02 02:18:40,467 Mode is write, removing page and invalidating rest.
+2024-06-02 02:18:40,467 Virtual Memory status: []
+2024-06-02 02:18:40,467 CPU 0 status: []
+2024-06-02 02:18:40,467 Pages for CPU 0
+2024-06-02 02:18:40,467 CPU 1 status: [1]
+2024-06-02 02:18:40,467 Pages for CPU 1
+2024-06-02 02:18:40,467 Page(id=1, mode=w, status=True, last_access_time=4, replicated=True, origin_cpu=1)
+2024-06-02 02:18:40,468 CPU 2 status: []
+2024-06-02 02:18:40,468 Pages for CPU 2
+2024-06-02 02:18:40,468 CPU 3 status: []
+2024-06-02 02:18:40,468 Pages for CPU 3
+2024-06-02 02:18:40,468 ++++ Processing reference 5: CPU=2, Page=1, Mode=w
+2024-06-02 02:18:40,468 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,468 CPU 2: Page fault for page 1
+2024-06-02 02:18:40,468 Page 1 found in cache of CPU 1
+2024-06-02 02:18:40,468 mode is w
+2024-06-02 02:18:40,468 Mode is write, removing page and invalidating rest.
+2024-06-02 02:18:40,468 Virtual Memory status: []
+2024-06-02 02:18:40,468 CPU 0 status: []
+2024-06-02 02:18:40,468 Pages for CPU 0
+2024-06-02 02:18:40,468 CPU 1 status: []
+2024-06-02 02:18:40,468 Pages for CPU 1
+2024-06-02 02:18:40,469 CPU 2 status: [1]
+2024-06-02 02:18:40,469 Pages for CPU 2
+2024-06-02 02:18:40,469 Page(id=1, mode=w, status=True, last_access_time=5, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,469 CPU 3 status: []
+2024-06-02 02:18:40,469 Pages for CPU 3
+2024-06-02 02:18:40,469 ++++ Processing reference 6: CPU=3, Page=1, Mode=r
+2024-06-02 02:18:40,469 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,469 CPU 3: Page fault for page 1
+2024-06-02 02:18:40,469 Page 1 found in cache of CPU 2
+2024-06-02 02:18:40,469 mode is r
+2024-06-02 02:18:40,469 Mode is read only, copying page
+2024-06-02 02:18:40,469 Virtual Memory status: []
+2024-06-02 02:18:40,469 CPU 0 status: []
+2024-06-02 02:18:40,469 Pages for CPU 0
+2024-06-02 02:18:40,469 CPU 1 status: []
+2024-06-02 02:18:40,470 Pages for CPU 1
+2024-06-02 02:18:40,470 CPU 2 status: [1]
+2024-06-02 02:18:40,470 Pages for CPU 2
+2024-06-02 02:18:40,470 Page(id=1, mode=w, status=True, last_access_time=5, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,470 CPU 3 status: [1]
+2024-06-02 02:18:40,470 Pages for CPU 3
+2024-06-02 02:18:40,470 Page(id=1, mode=r, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,470 ++++ Processing reference 7: CPU=3, Page=1, Mode=w
+2024-06-02 02:18:40,470 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,470 Page 1 found in cache of CPU 3
+2024-06-02 02:18:40,470 Page 1 invalidated in CPU 2.
+2024-06-02 02:18:40,470 CPU 3: Page 1 loaded from cache
+2024-06-02 02:18:40,470 Virtual Memory status: []
+2024-06-02 02:18:40,470 CPU 0 status: []
+2024-06-02 02:18:40,470 Pages for CPU 0
+2024-06-02 02:18:40,470 CPU 1 status: []
+2024-06-02 02:18:40,470 Pages for CPU 1
+2024-06-02 02:18:40,470 CPU 2 status: [1]
+2024-06-02 02:18:40,470 Pages for CPU 2
+2024-06-02 02:18:40,470 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,471 CPU 3 status: [1]
+2024-06-02 02:18:40,471 Pages for CPU 3
+2024-06-02 02:18:40,471 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,471 ++++ Processing reference 8: CPU=0, Page=2, Mode=r
+2024-06-02 02:18:40,471 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,471 CPU 0: Page fault for page 2
+2024-06-02 02:18:40,471 Virtual Memory status: []
+2024-06-02 02:18:40,471 CPU 0 status: [2]
+2024-06-02 02:18:40,471 Pages for CPU 0
+2024-06-02 02:18:40,471 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,471 CPU 1 status: []
+2024-06-02 02:18:40,471 Pages for CPU 1
+2024-06-02 02:18:40,471 CPU 2 status: [1]
+2024-06-02 02:18:40,471 Pages for CPU 2
+2024-06-02 02:18:40,471 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,471 CPU 3 status: [1]
+2024-06-02 02:18:40,471 Pages for CPU 3
+2024-06-02 02:18:40,471 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,471 ++++ Processing reference 9: CPU=0, Page=3, Mode=r
+2024-06-02 02:18:40,471 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,471 CPU 0: Page fault for page 3
+2024-06-02 02:18:40,471 Virtual Memory status: []
+2024-06-02 02:18:40,472 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,472 Pages for CPU 0
+2024-06-02 02:18:40,472 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,472 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,472 CPU 1 status: []
+2024-06-02 02:18:40,472 Pages for CPU 1
+2024-06-02 02:18:40,472 CPU 2 status: [1]
+2024-06-02 02:18:40,472 Pages for CPU 2
+2024-06-02 02:18:40,472 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,472 CPU 3 status: [1]
+2024-06-02 02:18:40,472 Pages for CPU 3
+2024-06-02 02:18:40,472 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,472 ++++ Processing reference 10: CPU=1, Page=4, Mode=w
+2024-06-02 02:18:40,472 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,472 CPU 1: Page fault for page 4
+2024-06-02 02:18:40,472 Virtual Memory status: []
+2024-06-02 02:18:40,472 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,473 Pages for CPU 0
+2024-06-02 02:18:40,473 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,473 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,473 CPU 1 status: [4]
+2024-06-02 02:18:40,473 Pages for CPU 1
+2024-06-02 02:18:40,473 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,473 CPU 2 status: [1]
+2024-06-02 02:18:40,473 Pages for CPU 2
+2024-06-02 02:18:40,473 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,473 CPU 3 status: [1]
+2024-06-02 02:18:40,473 Pages for CPU 3
+2024-06-02 02:18:40,473 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,473 ++++ Processing reference 11: CPU=1, Page=5, Mode=w
+2024-06-02 02:18:40,473 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,473 CPU 1: Page fault for page 5
+2024-06-02 02:18:40,473 Virtual Memory status: []
+2024-06-02 02:18:40,473 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,474 Pages for CPU 0
+2024-06-02 02:18:40,474 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,474 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,474 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,474 Pages for CPU 1
+2024-06-02 02:18:40,474 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,474 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,474 CPU 2 status: [1]
+2024-06-02 02:18:40,474 Pages for CPU 2
+2024-06-02 02:18:40,474 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,474 CPU 3 status: [1]
+2024-06-02 02:18:40,474 Pages for CPU 3
+2024-06-02 02:18:40,474 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,474 ++++ Processing reference 12: CPU=2, Page=6, Mode=r
+2024-06-02 02:18:40,474 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,474 CPU 2: Page fault for page 6
+2024-06-02 02:18:40,475 Virtual Memory status: []
+2024-06-02 02:18:40,475 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,475 Pages for CPU 0
+2024-06-02 02:18:40,476 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,476 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,476 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,476 Pages for CPU 1
+2024-06-02 02:18:40,476 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,476 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,476 CPU 2 status: [1, 6]
+2024-06-02 02:18:40,476 Pages for CPU 2
+2024-06-02 02:18:40,476 Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+2024-06-02 02:18:40,476 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,476 CPU 3 status: [1]
+2024-06-02 02:18:40,476 Pages for CPU 3
+2024-06-02 02:18:40,476 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,476 ++++ Processing reference 13: CPU=2, Page=7, Mode=r
+2024-06-02 02:18:40,476 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,476 CPU 2: Page fault for page 7
+2024-06-02 02:18:40,477 CPU 2: Cache is full
+2024-06-02 02:18:40,477 CPU 2: Evicting page with algorithm OPTIMAL
+2024-06-02 02:18:40,477 CPU 2: Optimal eviction of page 1
+2024-06-02 02:18:40,477 Virtual Memory status: [1]
+2024-06-02 02:18:40,477 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,477 Pages for CPU 0
+2024-06-02 02:18:40,477 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,477 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,477 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,477 Pages for CPU 1
+2024-06-02 02:18:40,477 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,477 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,477 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,477 Pages for CPU 2
+2024-06-02 02:18:40,478 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,478 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,478 CPU 3 status: [1]
+2024-06-02 02:18:40,478 Pages for CPU 3
+2024-06-02 02:18:40,478 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,478 ++++ Processing reference 14: CPU=3, Page=8, Mode=w
+2024-06-02 02:18:40,478 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,478 CPU 3: Page fault for page 8
+2024-06-02 02:18:40,478 Virtual Memory status: [1]
+2024-06-02 02:18:40,478 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,478 Pages for CPU 0
+2024-06-02 02:18:40,478 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,478 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,478 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,479 Pages for CPU 1
+2024-06-02 02:18:40,479 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,479 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,479 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,479 Pages for CPU 2
+2024-06-02 02:18:40,479 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,479 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,479 CPU 3 status: [1, 8]
+2024-06-02 02:18:40,479 Pages for CPU 3
+2024-06-02 02:18:40,479 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+2024-06-02 02:18:40,479 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,479 ++++ Processing reference 15: CPU=3, Page=9, Mode=w
+2024-06-02 02:18:40,479 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,479 CPU 3: Page fault for page 9
+2024-06-02 02:18:40,480 CPU 3: Cache is full
+2024-06-02 02:18:40,480 CPU 3: Evicting page with algorithm OPTIMAL
+2024-06-02 02:18:40,480 CPU 3: Optimal eviction of page 1
+2024-06-02 02:18:40,480 Virtual Memory status: [1, 1]
+2024-06-02 02:18:40,480 CPU 0 status: [2, 3]
+2024-06-02 02:18:40,480 Pages for CPU 0
+2024-06-02 02:18:40,480 Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,480 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,480 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,480 Pages for CPU 1
+2024-06-02 02:18:40,480 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,480 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,480 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,481 Pages for CPU 2
+2024-06-02 02:18:40,481 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,481 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,481 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,486 Pages for CPU 3
+2024-06-02 02:18:40,486 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,486 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,486 ++++ Processing reference 16: CPU=0, Page=10, Mode=r
+2024-06-02 02:18:40,486 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,486 CPU 0: Page fault for page 10
+2024-06-02 02:18:40,486 CPU 0: Cache is full
+2024-06-02 02:18:40,486 CPU 0: Evicting page with algorithm OPTIMAL
+2024-06-02 02:18:40,486 CPU 0: Optimal eviction of page 2
+2024-06-02 02:18:40,486 Virtual Memory status: [1, 1, 2]
+2024-06-02 02:18:40,487 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,487 Pages for CPU 0
+2024-06-02 02:18:40,487 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,487 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,487 CPU 1 status: [4, 5]
+2024-06-02 02:18:40,487 Pages for CPU 1
+2024-06-02 02:18:40,487 Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,487 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,487 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,487 Pages for CPU 2
+2024-06-02 02:18:40,487 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,487 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,487 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,487 Pages for CPU 3
+2024-06-02 02:18:40,488 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,488 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,488 ++++ Processing reference 17: CPU=1, Page=11, Mode=w
+2024-06-02 02:18:40,488 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,488 CPU 1: Page fault for page 11
+2024-06-02 02:18:40,488 CPU 1: Cache is full
+2024-06-02 02:18:40,488 CPU 1: Evicting page with algorithm OPTIMAL
+2024-06-02 02:18:40,488 CPU 1: Optimal eviction of page 4
+2024-06-02 02:18:40,488 Virtual Memory status: [1, 1, 2, 4]
+2024-06-02 02:18:40,488 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,488 Pages for CPU 0
+2024-06-02 02:18:40,488 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,488 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,488 CPU 1 status: [5, 11]
+2024-06-02 02:18:40,488 Pages for CPU 1
+2024-06-02 02:18:40,489 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,489 Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,489 CPU 2 status: [6, 7]
+2024-06-02 02:18:40,489 Pages for CPU 2
+2024-06-02 02:18:40,489 Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,489 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,489 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,489 Pages for CPU 3
+2024-06-02 02:18:40,489 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,489 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,489 ++++ Processing reference 18: CPU=2, Page=12, Mode=r
+2024-06-02 02:18:40,489 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,489 CPU 2: Page fault for page 12
+2024-06-02 02:18:40,489 CPU 2: Cache is full
+2024-06-02 02:18:40,490 CPU 2: Evicting page with algorithm OPTIMAL
+2024-06-02 02:18:40,490 CPU 2: Optimal eviction of page 6
+2024-06-02 02:18:40,490 Virtual Memory status: [1, 1, 2, 4, 6]
+2024-06-02 02:18:40,490 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,490 Pages for CPU 0
+2024-06-02 02:18:40,490 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,490 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,490 CPU 1 status: [5, 11]
+2024-06-02 02:18:40,490 Pages for CPU 1
+2024-06-02 02:18:40,490 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,490 Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,490 CPU 2 status: [7, 12]
+2024-06-02 02:18:40,490 Pages for CPU 2
+2024-06-02 02:18:40,490 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,490 Page(id=12, mode=r, status=True, last_access_time=18, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,491 CPU 3 status: [8, 9]
+2024-06-02 02:18:40,491 Pages for CPU 3
+2024-06-02 02:18:40,491 Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,491 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,491 ++++ Processing reference 19: CPU=3, Page=13, Mode=w
+2024-06-02 02:18:40,491 Using OPTIMAL algorithm.
+2024-06-02 02:18:40,491 CPU 3: Page fault for page 13
+2024-06-02 02:18:40,491 CPU 3: Cache is full
+2024-06-02 02:18:40,491 CPU 3: Evicting page with algorithm OPTIMAL
+2024-06-02 02:18:40,491 CPU 3: Optimal eviction of page 8
+2024-06-02 02:18:40,495 Virtual Memory status: [1, 1, 2, 4, 6, 8]
+2024-06-02 02:18:40,495 CPU 0 status: [3, 10]
+2024-06-02 02:18:40,496 Pages for CPU 0
+2024-06-02 02:18:40,496 Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,496 Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+2024-06-02 02:18:40,496 CPU 1 status: [5, 11]
+2024-06-02 02:18:40,496 Pages for CPU 1
+2024-06-02 02:18:40,496 Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,496 Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+2024-06-02 02:18:40,496 CPU 2 status: [7, 12]
+2024-06-02 02:18:40,496 Pages for CPU 2
+2024-06-02 02:18:40,496 Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,496 Page(id=12, mode=r, status=True, last_access_time=18, replicated=True, origin_cpu=2)
+2024-06-02 02:18:40,496 CPU 3 status: [9, 13]
+2024-06-02 02:18:40,496 Pages for CPU 3
+2024-06-02 02:18:40,497 Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,497 Page(id=13, mode=w, status=True, last_access_time=19, replicated=False, origin_cpu=3)
+2024-06-02 02:18:40,497 ------- STATISTICS -------
+2024-06-02 02:18:40,497 CPU 0 - Page Faults: 4 (21.05%), Hits: 2 (10.53%), Invalidations: 0 (0.00%)
+2024-06-02 02:18:40,497 CPU 1 - Page Faults: 4 (21.05%), Hits: 0 (0.00%), Invalidations: 0 (0.00%)
+2024-06-02 02:18:40,497 CPU 2 - Page Faults: 4 (21.05%), Hits: 0 (0.00%), Invalidations: 1 (5.26%)
+2024-06-02 02:18:40,497 CPU 3 - Page Faults: 4 (21.05%), Hits: 1 (5.26%), Invalidations: 0 (0.00%)
+2024-06-02 02:18:40,497 Total Page Faults: 16
+2024-06-02 02:18:40,497 Total Hits: 3
+2024-06-02 02:18:40,497 Total Invalidations: 1
+2024-06-02 02:18:40,497 ------- END -------

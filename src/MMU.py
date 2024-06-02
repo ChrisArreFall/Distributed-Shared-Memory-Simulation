@@ -1,5 +1,5 @@
 import globals
-from Page import Page
+import logging
 
 class MMU:
     def __init__(self):
@@ -9,22 +9,25 @@ class MMU:
         print(f"Page {page.id} added to Virtual Memory")
         self.RAM.append(page)
 
-    def send_page(self, page_id):
-        # If we have the page in RAM, we remove it and return it
+    def send_page(self, page_id, mode):
+        # If we have the page in RAM, we return it
         for i, page in enumerate(self.RAM):
             if page.id == page_id:
-                print(f"Page {page.id} in {i} deleted from Virtual Memory")
+                if mode == 'w' and page.replicated:
+                    self.invalidate_page(page)
                 self.RAM.pop(i)
                 return page
-            
-    def print_status(self):
-        print(f"--------------------{globals.algorithm}-------------------")
-        print("----------------Virtual Memory----------------")
-        pages = []
-        for page in self.RAM:
-            pages.append(page.id)
-        print(pages)
+        print(f"Page {page_id} not found in Virtual Memory")
+        return None
 
-    def report_stats(self):
-        # Implement the logic to report statistics
-        pass
+    def invalidate_page(self, page):
+        page.invalidate()
+        globals.network_instance.broadcast_invalidation(page)
+        print(f"Page {page.id} invalidated in Virtual Memory")
+
+    def print_status(self):
+        pages = [page.id for page in self.RAM]
+        print("----------------Virtual Memory----------------")
+        print(pages)
+        logging.info(f"Virtual Memory status: {pages}")
+
