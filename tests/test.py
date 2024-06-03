@@ -16,10 +16,10 @@ def run_test(config_file, references_file, algorithm):
         '-r', references_file, 
         '-o', 'test_results.txt', 
         '-a', algorithm, 
-        '-d', 'True',
         '-i', 'N'
     ]
     with open(output_file, 'w') as f:
+        print(cmd)
         process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         for line in process.stdout:
             print(line, end='')  # Print to console

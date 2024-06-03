@@ -1,13 +1,23 @@
+Replication is enabled
+++++++++++++Processing reference 1++++++++++++
+Reference 1: CPU=0, Page=1, Mode=r
+Using FIFO algorithm.
+First time processing page 1
 Page 1 added to Virtual Memory
-++++ Processing reference 1: CPU=0, Page=1, Mode=r
-Using FIFO algorithm.
+----------------Virtual Memory----------------
+[1]
+CPU 0: Page 1 Miss
+CPU 0: Page fault for page 1
 Page 1 not found in any CPU
+Requesting page 1 from virtual memory.
+Page 1 found in virtual memory.
+Loading page 1 to CPU 0.
 ----------------Virtual Memory----------------
 []
 --------------------CPU 0---------------------
 [1]
 Pages for CPU 0
-Page(id=1, mode=r, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+Page(id=1, mode=r, status=True, last_access_time=1, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
 []
 Pages for CPU 1
@@ -17,15 +27,19 @@ Pages for CPU 2
 --------------------CPU 3---------------------
 []
 Pages for CPU 3
-++++ Processing reference 2: CPU=0, Page=1, Mode=r
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 2++++++++++++
+Reference 2: CPU=0, Page=1, Mode=w
 Using FIFO algorithm.
 Page 1 found in cache of CPU 0
+Changing mode from r to w in page 1 for CPU 0.
+CPU 0: Page 1 Hit
 ----------------Virtual Memory----------------
 []
 --------------------CPU 0---------------------
 [1]
 Pages for CPU 0
-Page(id=1, mode=r, status=True, last_access_time=1, replicated=True, origin_cpu=0)
+Page(id=1, mode=w, status=True, last_access_time=1, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
 []
 Pages for CPU 1
@@ -35,9 +49,16 @@ Pages for CPU 2
 --------------------CPU 3---------------------
 []
 Pages for CPU 3
-++++ Processing reference 3: CPU=0, Page=1, Mode=w
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 3++++++++++++
+Reference 3: CPU=1, Page=1, Mode=r
 Using FIFO algorithm.
+CPU 1: Page 1 Miss
+CPU 1: Page fault for page 1
 Page 1 found in cache of CPU 0
+mode is r
+Mode is read only, copying page
+Loading page 1 to CPU 1.
 ----------------Virtual Memory----------------
 []
 --------------------CPU 0---------------------
@@ -45,19 +66,27 @@ Page 1 found in cache of CPU 0
 Pages for CPU 0
 Page(id=1, mode=w, status=True, last_access_time=1, replicated=True, origin_cpu=0)
 --------------------CPU 1---------------------
-[]
+[1]
 Pages for CPU 1
+Page(id=1, mode=r, status=True, last_access_time=3, replicated=True, origin_cpu=1)
 --------------------CPU 2---------------------
 []
 Pages for CPU 2
 --------------------CPU 3---------------------
 []
 Pages for CPU 3
-++++ Processing reference 4: CPU=1, Page=1, Mode=w
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 4++++++++++++
+Reference 4: CPU=2, Page=1, Mode=w
 Using FIFO algorithm.
+CPU 2: Page 1 Miss
+CPU 2: Page fault for page 1
 Page 1 found in cache of CPU 0
 mode is w
 Mode is write, removing page and invalidating rest.
+Page 1 invalidated in CPU 1.
+CPU 1: Page 1 Invalidated
+Loading page 1 to CPU 2.
 ----------------Virtual Memory----------------
 []
 --------------------CPU 0---------------------
@@ -66,383 +95,578 @@ Pages for CPU 0
 --------------------CPU 1---------------------
 [1]
 Pages for CPU 1
-Page(id=1, mode=w, status=True, last_access_time=4, replicated=True, origin_cpu=1)
---------------------CPU 2---------------------
-[]
-Pages for CPU 2
---------------------CPU 3---------------------
-[]
-Pages for CPU 3
-++++ Processing reference 5: CPU=2, Page=1, Mode=w
-Using FIFO algorithm.
-Page 1 found in cache of CPU 1
-mode is w
-Mode is write, removing page and invalidating rest.
-----------------Virtual Memory----------------
-[]
---------------------CPU 0---------------------
-[]
-Pages for CPU 0
---------------------CPU 1---------------------
-[]
-Pages for CPU 1
+Page(id=1, mode=r, status=False, last_access_time=3, replicated=False, origin_cpu=1)
 --------------------CPU 2---------------------
 [1]
 Pages for CPU 2
-Page(id=1, mode=w, status=True, last_access_time=5, replicated=True, origin_cpu=2)
+Page(id=1, mode=w, status=True, last_access_time=4, replicated=True, origin_cpu=2)
 --------------------CPU 3---------------------
 []
 Pages for CPU 3
-++++ Processing reference 6: CPU=3, Page=1, Mode=r
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 5++++++++++++
+Reference 5: CPU=1, Page=1, Mode=r
 Using FIFO algorithm.
+Page 1 found in cache but invalidated in CPU 1.
+CPU 1: Page 1 Miss
+CPU 1: Page fault for page 1
 Page 1 found in cache of CPU 2
 mode is r
 Mode is read only, copying page
+Loading page 1 to CPU 1.
 ----------------Virtual Memory----------------
 []
 --------------------CPU 0---------------------
 []
 Pages for CPU 0
 --------------------CPU 1---------------------
-[]
+[1]
 Pages for CPU 1
+Page(id=1, mode=r, status=True, last_access_time=5, replicated=True, origin_cpu=1)
 --------------------CPU 2---------------------
 [1]
 Pages for CPU 2
-Page(id=1, mode=w, status=True, last_access_time=5, replicated=True, origin_cpu=2)
+Page(id=1, mode=w, status=True, last_access_time=4, replicated=True, origin_cpu=2)
+--------------------CPU 3---------------------
+[]
+Pages for CPU 3
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 6++++++++++++
+Reference 6: CPU=3, Page=1, Mode=r
+Using FIFO algorithm.
+CPU 3: Page 1 Miss
+CPU 3: Page fault for page 1
+Page 1 found in cache of CPU 1
+mode is r
+Mode is read only, copying page
+Loading page 1 to CPU 3.
+----------------Virtual Memory----------------
+[]
+--------------------CPU 0---------------------
+[]
+Pages for CPU 0
+--------------------CPU 1---------------------
+[1]
+Pages for CPU 1
+Page(id=1, mode=r, status=True, last_access_time=5, replicated=True, origin_cpu=1)
+--------------------CPU 2---------------------
+[1]
+Pages for CPU 2
+Page(id=1, mode=w, status=True, last_access_time=4, replicated=True, origin_cpu=2)
 --------------------CPU 3---------------------
 [1]
 Pages for CPU 3
 Page(id=1, mode=r, status=True, last_access_time=6, replicated=True, origin_cpu=3)
-++++ Processing reference 7: CPU=3, Page=1, Mode=w
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 7++++++++++++
+Reference 7: CPU=3, Page=1, Mode=w
 Using FIFO algorithm.
 Page 1 found in cache of CPU 3
+Page 1 invalidated in CPU 1.
+CPU 1: Page 1 Invalidated
 Page 1 invalidated in CPU 2.
+CPU 2: Page 1 Invalidated
+Changing mode from r to w in page 1 for CPU 3.
+CPU 3: Page 1 Hit
 ----------------Virtual Memory----------------
 []
 --------------------CPU 0---------------------
 []
 Pages for CPU 0
 --------------------CPU 1---------------------
-[]
+[1]
 Pages for CPU 1
+Page(id=1, mode=r, status=False, last_access_time=5, replicated=False, origin_cpu=1)
 --------------------CPU 2---------------------
 [1]
 Pages for CPU 2
-Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+Page(id=1, mode=w, status=False, last_access_time=4, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
 [1]
 Pages for CPU 3
 Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
-Page 2 added to Virtual Memory
-++++ Processing reference 8: CPU=0, Page=2, Mode=r
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 8++++++++++++
+Reference 8: CPU=1, Page=1, Mode=w
 Using FIFO algorithm.
+Page 1 found in cache but invalidated in CPU 1.
+CPU 1: Page 1 Miss
+CPU 1: Page fault for page 1
+Page 1 found in cache but invalidated in CPU 2.
+Page 1 found in cache of CPU 3
+mode is w
+Mode is write, removing page and invalidating rest.
+Page 1 invalidated in CPU 1.
+CPU 1: Page 1 Invalidated
+Page 1 invalidated in CPU 2.
+CPU 2: Page 1 Invalidated
+Loading page 1 to CPU 1.
+----------------Virtual Memory----------------
+[]
+--------------------CPU 0---------------------
+[]
+Pages for CPU 0
+--------------------CPU 1---------------------
+[1]
+Pages for CPU 1
+Page(id=1, mode=w, status=True, last_access_time=8, replicated=True, origin_cpu=1)
+--------------------CPU 2---------------------
+[1]
+Pages for CPU 2
+Page(id=1, mode=w, status=False, last_access_time=4, replicated=False, origin_cpu=2)
+--------------------CPU 3---------------------
+[]
+Pages for CPU 3
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 9++++++++++++
+Reference 9: CPU=0, Page=2, Mode=r
+Using FIFO algorithm.
+First time processing page 2
+Page 2 added to Virtual Memory
+----------------Virtual Memory----------------
+[2]
+CPU 0: Page 2 Miss
+CPU 0: Page fault for page 2
 Page 2 not found in any CPU
+Requesting page 2 from virtual memory.
+Page 2 found in virtual memory.
+Loading page 2 to CPU 0.
 ----------------Virtual Memory----------------
 []
 --------------------CPU 0---------------------
 [2]
 Pages for CPU 0
-Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
+Page(id=2, mode=r, status=True, last_access_time=9, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
-[]
+[1]
 Pages for CPU 1
+Page(id=1, mode=w, status=True, last_access_time=8, replicated=True, origin_cpu=1)
 --------------------CPU 2---------------------
 [1]
 Pages for CPU 2
-Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+Page(id=1, mode=w, status=False, last_access_time=4, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
-[1]
+[]
 Pages for CPU 3
-Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 10++++++++++++
+Reference 10: CPU=0, Page=3, Mode=r
+Using FIFO algorithm.
+First time processing page 3
 Page 3 added to Virtual Memory
-++++ Processing reference 9: CPU=0, Page=3, Mode=r
-Using FIFO algorithm.
+----------------Virtual Memory----------------
+[3]
+CPU 0: Page 3 Miss
+CPU 0: Page fault for page 3
 Page 3 not found in any CPU
+Requesting page 3 from virtual memory.
+Page 3 found in virtual memory.
+Loading page 3 to CPU 0.
 ----------------Virtual Memory----------------
 []
 --------------------CPU 0---------------------
 [2, 3]
 Pages for CPU 0
-Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+Page(id=2, mode=r, status=True, last_access_time=9, replicated=False, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
-[]
+[1]
 Pages for CPU 1
+Page(id=1, mode=w, status=True, last_access_time=8, replicated=True, origin_cpu=1)
 --------------------CPU 2---------------------
 [1]
 Pages for CPU 2
-Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+Page(id=1, mode=w, status=False, last_access_time=4, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
-[1]
+[]
 Pages for CPU 3
-Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 11++++++++++++
+Reference 11: CPU=1, Page=4, Mode=w
+Using FIFO algorithm.
+First time processing page 4
 Page 4 added to Virtual Memory
-++++ Processing reference 10: CPU=1, Page=4, Mode=w
-Using FIFO algorithm.
-Page 4 not found in any CPU
 ----------------Virtual Memory----------------
-[]
---------------------CPU 0---------------------
-[2, 3]
-Pages for CPU 0
-Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
---------------------CPU 1---------------------
 [4]
+CPU 1: Page 4 Miss
+CPU 1: Page fault for page 4
+Page 4 not found in any CPU
+Requesting page 4 from virtual memory.
+Page 4 found in virtual memory.
+Loading page 4 to CPU 1.
+----------------Virtual Memory----------------
+[]
+--------------------CPU 0---------------------
+[2, 3]
+Pages for CPU 0
+Page(id=2, mode=r, status=True, last_access_time=9, replicated=False, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
+--------------------CPU 1---------------------
+[1, 4]
 Pages for CPU 1
-Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
+Page(id=1, mode=w, status=True, last_access_time=8, replicated=True, origin_cpu=1)
+Page(id=4, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
 --------------------CPU 2---------------------
 [1]
 Pages for CPU 2
-Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+Page(id=1, mode=w, status=False, last_access_time=4, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
-[1]
+[]
 Pages for CPU 3
-Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 12++++++++++++
+Reference 12: CPU=1, Page=5, Mode=w
+Using FIFO algorithm.
+First time processing page 5
 Page 5 added to Virtual Memory
-++++ Processing reference 11: CPU=1, Page=5, Mode=w
-Using FIFO algorithm.
-Page 5 not found in any CPU
 ----------------Virtual Memory----------------
-[]
+[5]
+CPU 1: Page 5 Miss
+CPU 1: Page fault for page 5
+Page 5 not found in any CPU
+Requesting page 5 from virtual memory.
+Page 5 found in virtual memory.
+Loading page 5 to CPU 1.
+CPU 1: Cache is full
+CPU 1: Evicting page with algorithm FIFO
+Page 1 added to Virtual Memory
+CPU 1: FIFO eviction of page 1
+Loading page 5 to CPU 1.
+----------------Virtual Memory----------------
+[1]
 --------------------CPU 0---------------------
 [2, 3]
 Pages for CPU 0
-Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+Page(id=2, mode=r, status=True, last_access_time=9, replicated=False, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
 [4, 5]
 Pages for CPU 1
-Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
-Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+Page(id=4, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+Page(id=5, mode=w, status=True, last_access_time=12, replicated=False, origin_cpu=1)
 --------------------CPU 2---------------------
 [1]
 Pages for CPU 2
-Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
+Page(id=1, mode=w, status=False, last_access_time=4, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
-[1]
-Pages for CPU 3
-Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
-Page 6 added to Virtual Memory
-++++ Processing reference 12: CPU=2, Page=6, Mode=r
-Using FIFO algorithm.
-Page 6 not found in any CPU
-----------------Virtual Memory----------------
 []
+Pages for CPU 3
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 13++++++++++++
+Reference 13: CPU=2, Page=6, Mode=r
+Using FIFO algorithm.
+First time processing page 6
+Page 6 added to Virtual Memory
+----------------Virtual Memory----------------
+[1, 6]
+CPU 2: Page 6 Miss
+CPU 2: Page fault for page 6
+Page 6 not found in any CPU
+Requesting page 6 from virtual memory.
+Page 6 found in virtual memory.
+Loading page 6 to CPU 2.
+----------------Virtual Memory----------------
+[1]
 --------------------CPU 0---------------------
 [2, 3]
 Pages for CPU 0
-Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+Page(id=2, mode=r, status=True, last_access_time=9, replicated=False, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
 [4, 5]
 Pages for CPU 1
-Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
-Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+Page(id=4, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+Page(id=5, mode=w, status=True, last_access_time=12, replicated=False, origin_cpu=1)
 --------------------CPU 2---------------------
 [1, 6]
 Pages for CPU 2
-Page(id=1, mode=w, status=False, last_access_time=5, replicated=False, origin_cpu=2)
-Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
+Page(id=1, mode=w, status=False, last_access_time=4, replicated=False, origin_cpu=2)
+Page(id=6, mode=r, status=True, last_access_time=13, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
-[1]
+[]
 Pages for CPU 3
-Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 14++++++++++++
+Reference 14: CPU=2, Page=7, Mode=r
+Using FIFO algorithm.
+First time processing page 7
 Page 7 added to Virtual Memory
-++++ Processing reference 13: CPU=2, Page=7, Mode=r
-Using FIFO algorithm.
+----------------Virtual Memory----------------
+[1, 7]
+CPU 2: Page 7 Miss
+CPU 2: Page fault for page 7
 Page 7 not found in any CPU
+Requesting page 7 from virtual memory.
+Page 7 found in virtual memory.
+Loading page 7 to CPU 2.
+CPU 2: Cache is full
+CPU 2: Evicting page with algorithm FIFO
 Page 1 added to Virtual Memory
-----------------Virtual Memory----------------
-[1]
---------------------CPU 0---------------------
-[2, 3]
-Pages for CPU 0
-Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
---------------------CPU 1---------------------
-[4, 5]
-Pages for CPU 1
-Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
-Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
---------------------CPU 2---------------------
-[6, 7]
-Pages for CPU 2
-Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
-Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
---------------------CPU 3---------------------
-[1]
-Pages for CPU 3
-Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
-Page 8 added to Virtual Memory
-++++ Processing reference 14: CPU=3, Page=8, Mode=w
-Using FIFO algorithm.
-Page 8 not found in any CPU
-----------------Virtual Memory----------------
-[1]
---------------------CPU 0---------------------
-[2, 3]
-Pages for CPU 0
-Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
---------------------CPU 1---------------------
-[4, 5]
-Pages for CPU 1
-Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
-Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
---------------------CPU 2---------------------
-[6, 7]
-Pages for CPU 2
-Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
-Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
---------------------CPU 3---------------------
-[1, 8]
-Pages for CPU 3
-Page(id=1, mode=w, status=True, last_access_time=6, replicated=True, origin_cpu=3)
-Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
-Page 9 added to Virtual Memory
-++++ Processing reference 15: CPU=3, Page=9, Mode=w
-Using FIFO algorithm.
-Page 9 not found in any CPU
-Page 1 added to Virtual Memory
+CPU 2: FIFO eviction of page 1
+Loading page 7 to CPU 2.
 ----------------Virtual Memory----------------
 [1, 1]
 --------------------CPU 0---------------------
 [2, 3]
 Pages for CPU 0
-Page(id=2, mode=r, status=True, last_access_time=8, replicated=True, origin_cpu=0)
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
+Page(id=2, mode=r, status=True, last_access_time=9, replicated=False, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
 [4, 5]
 Pages for CPU 1
-Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
-Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+Page(id=4, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+Page(id=5, mode=w, status=True, last_access_time=12, replicated=False, origin_cpu=1)
 --------------------CPU 2---------------------
 [6, 7]
 Pages for CPU 2
-Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
-Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+Page(id=6, mode=r, status=True, last_access_time=13, replicated=False, origin_cpu=2)
+Page(id=7, mode=r, status=True, last_access_time=14, replicated=False, origin_cpu=2)
+--------------------CPU 3---------------------
+[]
+Pages for CPU 3
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 15++++++++++++
+Reference 15: CPU=3, Page=8, Mode=w
+Using FIFO algorithm.
+First time processing page 8
+Page 8 added to Virtual Memory
+----------------Virtual Memory----------------
+[1, 1, 8]
+CPU 3: Page 8 Miss
+CPU 3: Page fault for page 8
+Page 8 not found in any CPU
+Requesting page 8 from virtual memory.
+Page 8 found in virtual memory.
+Loading page 8 to CPU 3.
+----------------Virtual Memory----------------
+[1, 1]
+--------------------CPU 0---------------------
+[2, 3]
+Pages for CPU 0
+Page(id=2, mode=r, status=True, last_access_time=9, replicated=False, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
+--------------------CPU 1---------------------
+[4, 5]
+Pages for CPU 1
+Page(id=4, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+Page(id=5, mode=w, status=True, last_access_time=12, replicated=False, origin_cpu=1)
+--------------------CPU 2---------------------
+[6, 7]
+Pages for CPU 2
+Page(id=6, mode=r, status=True, last_access_time=13, replicated=False, origin_cpu=2)
+Page(id=7, mode=r, status=True, last_access_time=14, replicated=False, origin_cpu=2)
+--------------------CPU 3---------------------
+[8]
+Pages for CPU 3
+Page(id=8, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 16++++++++++++
+Reference 16: CPU=3, Page=9, Mode=w
+Using FIFO algorithm.
+First time processing page 9
+Page 9 added to Virtual Memory
+----------------Virtual Memory----------------
+[1, 1, 9]
+CPU 3: Page 9 Miss
+CPU 3: Page fault for page 9
+Page 9 not found in any CPU
+Requesting page 9 from virtual memory.
+Page 9 found in virtual memory.
+Loading page 9 to CPU 3.
+----------------Virtual Memory----------------
+[1, 1]
+--------------------CPU 0---------------------
+[2, 3]
+Pages for CPU 0
+Page(id=2, mode=r, status=True, last_access_time=9, replicated=False, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
+--------------------CPU 1---------------------
+[4, 5]
+Pages for CPU 1
+Page(id=4, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+Page(id=5, mode=w, status=True, last_access_time=12, replicated=False, origin_cpu=1)
+--------------------CPU 2---------------------
+[6, 7]
+Pages for CPU 2
+Page(id=6, mode=r, status=True, last_access_time=13, replicated=False, origin_cpu=2)
+Page(id=7, mode=r, status=True, last_access_time=14, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
 [8, 9]
 Pages for CPU 3
-Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
-Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
-Page 10 added to Virtual Memory
-++++ Processing reference 16: CPU=0, Page=10, Mode=r
+Page(id=8, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+Page(id=9, mode=w, status=True, last_access_time=16, replicated=False, origin_cpu=3)
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 17++++++++++++
+Reference 17: CPU=0, Page=10, Mode=r
 Using FIFO algorithm.
+First time processing page 10
+Page 10 added to Virtual Memory
+----------------Virtual Memory----------------
+[1, 1, 10]
+CPU 0: Page 10 Miss
+CPU 0: Page fault for page 10
 Page 10 not found in any CPU
+Requesting page 10 from virtual memory.
+Page 10 found in virtual memory.
+Loading page 10 to CPU 0.
+CPU 0: Cache is full
+CPU 0: Evicting page with algorithm FIFO
 Page 2 added to Virtual Memory
+CPU 0: FIFO eviction of page 2
+Loading page 10 to CPU 0.
 ----------------Virtual Memory----------------
 [1, 1, 2]
 --------------------CPU 0---------------------
 [3, 10]
 Pages for CPU 0
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
-Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
+Page(id=10, mode=r, status=True, last_access_time=17, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
 [4, 5]
 Pages for CPU 1
-Page(id=4, mode=w, status=True, last_access_time=10, replicated=False, origin_cpu=1)
-Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+Page(id=4, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
+Page(id=5, mode=w, status=True, last_access_time=12, replicated=False, origin_cpu=1)
 --------------------CPU 2---------------------
 [6, 7]
 Pages for CPU 2
-Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
-Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+Page(id=6, mode=r, status=True, last_access_time=13, replicated=False, origin_cpu=2)
+Page(id=7, mode=r, status=True, last_access_time=14, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
 [8, 9]
 Pages for CPU 3
-Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
-Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
-Page 11 added to Virtual Memory
-++++ Processing reference 17: CPU=1, Page=11, Mode=w
+Page(id=8, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+Page(id=9, mode=w, status=True, last_access_time=16, replicated=False, origin_cpu=3)
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 18++++++++++++
+Reference 18: CPU=1, Page=11, Mode=w
 Using FIFO algorithm.
+First time processing page 11
+Page 11 added to Virtual Memory
+----------------Virtual Memory----------------
+[1, 1, 2, 11]
+CPU 1: Page 11 Miss
+CPU 1: Page fault for page 11
 Page 11 not found in any CPU
+Requesting page 11 from virtual memory.
+Page 11 found in virtual memory.
+Loading page 11 to CPU 1.
+CPU 1: Cache is full
+CPU 1: Evicting page with algorithm FIFO
 Page 4 added to Virtual Memory
+CPU 1: FIFO eviction of page 4
+Loading page 11 to CPU 1.
 ----------------Virtual Memory----------------
 [1, 1, 2, 4]
 --------------------CPU 0---------------------
 [3, 10]
 Pages for CPU 0
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
-Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
+Page(id=10, mode=r, status=True, last_access_time=17, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
 [5, 11]
 Pages for CPU 1
-Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
-Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+Page(id=5, mode=w, status=True, last_access_time=12, replicated=False, origin_cpu=1)
+Page(id=11, mode=w, status=True, last_access_time=18, replicated=False, origin_cpu=1)
 --------------------CPU 2---------------------
 [6, 7]
 Pages for CPU 2
-Page(id=6, mode=r, status=True, last_access_time=12, replicated=True, origin_cpu=2)
-Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
+Page(id=6, mode=r, status=True, last_access_time=13, replicated=False, origin_cpu=2)
+Page(id=7, mode=r, status=True, last_access_time=14, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
 [8, 9]
 Pages for CPU 3
-Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
-Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
-Page 12 added to Virtual Memory
-++++ Processing reference 18: CPU=2, Page=12, Mode=r
+Page(id=8, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+Page(id=9, mode=w, status=True, last_access_time=16, replicated=False, origin_cpu=3)
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 19++++++++++++
+Reference 19: CPU=2, Page=12, Mode=r
 Using FIFO algorithm.
+First time processing page 12
+Page 12 added to Virtual Memory
+----------------Virtual Memory----------------
+[1, 1, 2, 4, 12]
+CPU 2: Page 12 Miss
+CPU 2: Page fault for page 12
 Page 12 not found in any CPU
+Requesting page 12 from virtual memory.
+Page 12 found in virtual memory.
+Loading page 12 to CPU 2.
+CPU 2: Cache is full
+CPU 2: Evicting page with algorithm FIFO
 Page 6 added to Virtual Memory
+CPU 2: FIFO eviction of page 6
+Loading page 12 to CPU 2.
 ----------------Virtual Memory----------------
 [1, 1, 2, 4, 6]
 --------------------CPU 0---------------------
 [3, 10]
 Pages for CPU 0
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
-Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
+Page(id=10, mode=r, status=True, last_access_time=17, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
 [5, 11]
 Pages for CPU 1
-Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
-Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+Page(id=5, mode=w, status=True, last_access_time=12, replicated=False, origin_cpu=1)
+Page(id=11, mode=w, status=True, last_access_time=18, replicated=False, origin_cpu=1)
 --------------------CPU 2---------------------
 [7, 12]
 Pages for CPU 2
-Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
-Page(id=12, mode=r, status=True, last_access_time=18, replicated=True, origin_cpu=2)
+Page(id=7, mode=r, status=True, last_access_time=14, replicated=False, origin_cpu=2)
+Page(id=12, mode=r, status=True, last_access_time=19, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
 [8, 9]
 Pages for CPU 3
-Page(id=8, mode=w, status=True, last_access_time=14, replicated=False, origin_cpu=3)
-Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
-Page 13 added to Virtual Memory
-++++ Processing reference 19: CPU=3, Page=13, Mode=w
+Page(id=8, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
+Page(id=9, mode=w, status=True, last_access_time=16, replicated=False, origin_cpu=3)
+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++Processing reference 20++++++++++++
+Reference 20: CPU=3, Page=13, Mode=w
 Using FIFO algorithm.
+First time processing page 13
+Page 13 added to Virtual Memory
+----------------Virtual Memory----------------
+[1, 1, 2, 4, 6, 13]
+CPU 3: Page 13 Miss
+CPU 3: Page fault for page 13
 Page 13 not found in any CPU
+Requesting page 13 from virtual memory.
+Page 13 found in virtual memory.
+Loading page 13 to CPU 3.
+CPU 3: Cache is full
+CPU 3: Evicting page with algorithm FIFO
 Page 8 added to Virtual Memory
---------------------STATUS AFTER 19 REFERENCES--------------------
+CPU 3: FIFO eviction of page 8
+Loading page 13 to CPU 3.
+--------------------STATUS AFTER 20 REFERENCES--------------------
 ----------------Virtual Memory----------------
 [1, 1, 2, 4, 6, 8]
 --------------------CPU 0---------------------
 [3, 10]
 Pages for CPU 0
-Page(id=3, mode=r, status=True, last_access_time=9, replicated=True, origin_cpu=0)
-Page(id=10, mode=r, status=True, last_access_time=16, replicated=True, origin_cpu=0)
+Page(id=3, mode=r, status=True, last_access_time=10, replicated=False, origin_cpu=0)
+Page(id=10, mode=r, status=True, last_access_time=17, replicated=False, origin_cpu=0)
 --------------------CPU 1---------------------
 [5, 11]
 Pages for CPU 1
-Page(id=5, mode=w, status=True, last_access_time=11, replicated=False, origin_cpu=1)
-Page(id=11, mode=w, status=True, last_access_time=17, replicated=False, origin_cpu=1)
+Page(id=5, mode=w, status=True, last_access_time=12, replicated=False, origin_cpu=1)
+Page(id=11, mode=w, status=True, last_access_time=18, replicated=False, origin_cpu=1)
 --------------------CPU 2---------------------
 [7, 12]
 Pages for CPU 2
-Page(id=7, mode=r, status=True, last_access_time=13, replicated=True, origin_cpu=2)
-Page(id=12, mode=r, status=True, last_access_time=18, replicated=True, origin_cpu=2)
+Page(id=7, mode=r, status=True, last_access_time=14, replicated=False, origin_cpu=2)
+Page(id=12, mode=r, status=True, last_access_time=19, replicated=False, origin_cpu=2)
 --------------------CPU 3---------------------
 [9, 13]
 Pages for CPU 3
-Page(id=9, mode=w, status=True, last_access_time=15, replicated=False, origin_cpu=3)
-Page(id=13, mode=w, status=True, last_access_time=19, replicated=False, origin_cpu=3)
+Page(id=9, mode=w, status=True, last_access_time=16, replicated=False, origin_cpu=3)
+Page(id=13, mode=w, status=True, last_access_time=20, replicated=False, origin_cpu=3)
 ------- STATISTICS -------
-CPU 0 - Page Faults: 4 (21.05%), Hits: 2 (10.53%), Invalidations: 0 (0.00%)
-CPU 1 - Page Faults: 4 (21.05%), Hits: 0 (0.00%), Invalidations: 0 (0.00%)
-CPU 2 - Page Faults: 4 (21.05%), Hits: 0 (0.00%), Invalidations: 1 (5.26%)
-CPU 3 - Page Faults: 4 (21.05%), Hits: 1 (5.26%), Invalidations: 0 (0.00%)
-Total Page Faults: 16
-Total Hits: 3
-Total Invalidations: 1
+CPU 0 - Page Faults: 4 (20.00%), Hits: 1 (5.00%), Invalidations: 0 (0.00%)
+CPU 1 - Page Faults: 6 (30.00%), Hits: 0 (0.00%), Invalidations: 3 (15.00%)
+CPU 2 - Page Faults: 4 (20.00%), Hits: 0 (0.00%), Invalidations: 2 (10.00%)
+CPU 3 - Page Faults: 4 (20.00%), Hits: 1 (5.00%), Invalidations: 0 (0.00%)
+Total Page Faults: 18
+Total Hits: 2
+Total Invalidations: 5
+++++++++++++++++++++++++++++++++++++++++++++++
 ------- END -------

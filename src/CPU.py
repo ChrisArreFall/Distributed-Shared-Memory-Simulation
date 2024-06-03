@@ -12,16 +12,18 @@ class CPU:
     def load(self, page_id, mode):
         if self.cache.has_page_frame(page_id, mode):
             self.stats['hits'] += 1
-            logging.info(f"CPU {self.id}: Page {page_id} loaded from cache")
+            globals.PRINT_AND_LOG(f"CPU {self.id}: Page {page_id} Hit")
+
         else:
+            globals.PRINT_AND_LOG(f"CPU {self.id}: Page {page_id} Miss")
             self.page_fault(page_id, mode)
 
     def page_fault(self, page_id, mode):
         self.stats['page_faults'] += 1
-        logging.info(f"CPU {self.id}: Page fault for page {page_id}")
+        globals.PRINT_AND_LOG(f"CPU {self.id}: Page fault for page {page_id}")
         page = globals.network_instance.request_page(self.id, page_id, mode)
         while not self.cache.load_page_frame(page):
-            logging.info(f"CPU {self.id}: Cache is full")
+            globals.PRINT_AND_LOG(f"CPU {self.id}: Cache is full")
             self.evict_page()
 
     def copy(self, page_id):
@@ -31,7 +33,7 @@ class CPU:
         return self.cache.remove_page_frame(page_id)
 
     def evict_page(self):
-        logging.info(f"CPU {self.id}: Evicting page with algorithm {globals.algorithm}")
+        globals.PRINT_AND_LOG(f"CPU {self.id}: Evicting page with algorithm {globals.algorithm}")
         if globals.algorithm == 'FIFO':
             self.handle_fifo()
         elif globals.algorithm == 'LRU':
@@ -42,13 +44,13 @@ class CPU:
     def handle_fifo(self):
         evicted_page = self.cache.frames.pop(0)
         globals.mmu.store_page(evicted_page)
-        logging.info(f"CPU {self.id}: FIFO eviction of page {evicted_page.id}")
+        globals.PRINT_AND_LOG(f"CPU {self.id}: FIFO eviction of page {evicted_page.id}")
 
     def handle_lru(self):
         lru_page = min(self.cache.frames, key=lambda page: page.last_access_time)
         self.cache.frames.remove(lru_page)
         globals.mmu.store_page(lru_page)
-        logging.info(f"CPU {self.id}: LRU eviction of page {lru_page.id}")
+        globals.PRINT_AND_LOG(f"CPU {self.id}: LRU eviction of page {lru_page.id}")
 
     def handle_optimal(self):
         future_references = globals.references[globals.current_reference_index:]
@@ -63,10 +65,10 @@ class CPU:
         optimal_page = max(frames, key=next_use_distance)
         self.cache.frames.remove(optimal_page)
         globals.mmu.store_page(optimal_page)
-        logging.info(f"CPU {self.id}: Optimal eviction of page {optimal_page.id}")
+        globals.PRINT_AND_LOG(f"CPU {self.id}: Optimal eviction of page {optimal_page.id}")
 
     def receive_page(self, page):
-        logging.info(f"CPU {self.id}: Received page {page.id}")
+        globals.PRINT_AND_LOG(f"CPU {self.id}: Received page {page.id}")
         page.origin_cpu = self.id  # Set origin CPU when receiving a page
         self.cache.load_page_frame(page)
 
@@ -77,12 +79,11 @@ class CPU:
         print(pages)
 
     def print_pages(self):
-        print(f"Pages for CPU {self.id}")
-        logging.info(f"Pages for CPU {self.id}")
+        globals.PRINT_AND_LOG(f"Pages for CPU {self.id}")
         for page in self.cache.frames:
-            print(page)
-            logging.info(page)
+            globals.PRINT_AND_LOG(page)
 
     def invalidate_page(self,page):
         if self.cache.invalidate_page(page):
+            globals.PRINT_AND_LOG(f"CPU {self.id}: Page {page.id} Invalidated")
             self.stats['invalidations'] += 1

@@ -17,7 +17,7 @@ def load_configuration(config_file, references_file, algorithm, replication):
         num_CPUs=config['cpus'], 
         Pages_per_cpu=config['pages_per_cpu'], 
         Algorithm=algorithm or config['algorithm'], 
-        Replication=replication if replication is not None else config['replication'], 
+        Replication=replication if replication is not False else config['replication'], 
         References=references
     )
 
@@ -27,12 +27,12 @@ def main():
     parser.add_argument('-r', '--references', type=str, required=False, help='References file')
     parser.add_argument('-o', '--output', type=str, required=False, help='Output file')
     parser.add_argument('-a', '--algorithm', type=str, choices=['LRU', 'OPTIMAL', 'FIFO'], required=False, help='Page replacement algorithm')
-    parser.add_argument('-d', '--replication', type=bool, required=False, help='Replication option')
+    parser.add_argument('-d', '--replication', action='store_true', required=False, help='Replication option')
     parser.add_argument('-i', '--interval', type=str, default=1, help='Reporting interval')
     parser.add_argument('-g', '--gui', action='store_true', help='Run with GUI')
 
     args = parser.parse_args()
-
+    
     if args.gui:
         import GUI
         GUI.main()
