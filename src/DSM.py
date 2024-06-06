@@ -75,6 +75,6 @@ class DSM:
             stats = cpu.stats
             globals.PRINT_AND_LOG(f"CPU {cpu.id} - Page Faults: {stats['page_faults']} ({stats['page_faults'] / total_references:.2%}), Hits: {stats['hits']} ({stats['hits'] / total_references:.2%}), Invalidations: {stats['invalidations']} ({stats['invalidations'] / total_references:.2%})")
         
-        globals.PRINT_AND_LOG(f"Total Page Faults: {total_page_faults}")
-        globals.PRINT_AND_LOG(f"Total Hits: {total_hits}")
-        globals.PRINT_AND_LOG(f"Total Invalidations: {total_invalidations}")
+        globals.PRINT_AND_LOG(f"Total Page Faults: {total_page_faults} ({total_page_faults / total_references:.2%})")
+        globals.PRINT_AND_LOG(f"Total Hits: {total_hits} ({total_hits / total_references:.2%})")
+        globals.PRINT_AND_LOG(f"Total Invalidations: {total_invalidations} ({total_invalidations / total_references:.2%})")

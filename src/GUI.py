@@ -2,90 +2,117 @@ import sys
 import json
 import globals
 from DSM import DSM
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QFileDialog, QVBoxLayout, QWidget, QMessageBox, QGraphicsView, QGraphicsScene, QGraphicsEllipseItem
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QFileDialog, QVBoxLayout, QHBoxLayout, QWidget, QMessageBox, QGraphicsView, QGraphicsScene, QDialog, QTextEdit, QListWidget
 from PyQt5.QtCore import QPropertyAnimation, QRectF, Qt, QPointF
-
 class DSMGui(QMainWindow):
     def __init__(self):
         super().__init__()
         
+        self.current_iteration = 0
         self.initUI()
 
     def initUI(self):
         self.setWindowTitle('DSM Simulator')
         
-        layout = QVBoxLayout()
+        main_layout = QVBoxLayout()
+
+        top_layout = QHBoxLayout()
+
+        left_layout = QVBoxLayout()
+        right_layout = QVBoxLayout()
 
         self.total_pages_label = QLabel('Total Pages:', self)
         self.total_pages_input = QLineEdit(self)
-        layout.addWidget(self.total_pages_label)
-        layout.addWidget(self.total_pages_input)
+        left_layout.addWidget(self.total_pages_label)
+        left_layout.addWidget(self.total_pages_input)
 
         self.cpus_label = QLabel('CPUs:', self)
         self.cpus_input = QLineEdit(self)
-        layout.addWidget(self.cpus_label)
-        layout.addWidget(self.cpus_input)
+        left_layout.addWidget(self.cpus_label)
+        left_layout.addWidget(self.cpus_input)
 
         self.pages_per_cpu_label = QLabel('Pages per CPU:', self)
         self.pages_per_cpu_input = QLineEdit(self)
-        layout.addWidget(self.pages_per_cpu_label)
-        layout.addWidget(self.pages_per_cpu_input)
+        left_layout.addWidget(self.pages_per_cpu_label)
+        left_layout.addWidget(self.pages_per_cpu_input)
 
         self.algorithm_label = QLabel('Algorithm (LRU, OPTIMAL, FIFO):', self)
         self.algorithm_input = QLineEdit(self)
-        layout.addWidget(self.algorithm_label)
-        layout.addWidget(self.algorithm_input)
+        left_layout.addWidget(self.algorithm_label)
+        left_layout.addWidget(self.algorithm_input)
 
         self.replication_label = QLabel('Replication (True/False):', self)
         self.replication_input = QLineEdit(self)
-        layout.addWidget(self.replication_label)
-        layout.addWidget(self.replication_input)
+        left_layout.addWidget(self.replication_label)
+        left_layout.addWidget(self.replication_input)
 
         self.interval_label = QLabel('Interval:', self)
         self.interval_input = QLineEdit(self)
-        layout.addWidget(self.interval_label)
-        layout.addWidget(self.interval_input)
+        left_layout.addWidget(self.interval_label)
+        left_layout.addWidget(self.interval_input)
 
         self.references_label = QLabel('References File:', self)
         self.references_input = QLineEdit(self)
         self.references_button = QPushButton('Browse References File', self)
         self.references_button.clicked.connect(self.load_references)
-        layout.addWidget(self.references_label)
-        layout.addWidget(self.references_input)
-        layout.addWidget(self.references_button)
+        left_layout.addWidget(self.references_label)
+        left_layout.addWidget(self.references_input)
+        left_layout.addWidget(self.references_button)
 
         self.config_label = QLabel('Config File:', self)
         self.config_input = QLineEdit(self)
         self.config_button = QPushButton('Browse Config File', self)
         self.config_button.clicked.connect(self.load_config)
-        layout.addWidget(self.config_label)
-        layout.addWidget(self.config_input)
-        layout.addWidget(self.config_button)
+        left_layout.addWidget(self.config_label)
+        left_layout.addWidget(self.config_input)
+        left_layout.addWidget(self.config_button)
+
+        self.manual_references_label = QLabel('Manual References (format: CPU,Page,Mode):', self)
+        self.manual_references_input = QLineEdit(self)
+        self.add_reference_button = QPushButton('Add Reference', self)
+        self.add_reference_button.clicked.connect(self.add_reference)
+        right_layout.addWidget(self.manual_references_label)
+        right_layout.addWidget(self.manual_references_input)
+        right_layout.addWidget(self.add_reference_button)
+
+        self.references_list = QListWidget(self)
+        self.delete_reference_button = QPushButton('Delete Selected Reference', self)
+        self.delete_reference_button.clicked.connect(self.delete_reference)
+        right_layout.addWidget(self.references_list)
+        right_layout.addWidget(self.delete_reference_button)
 
         self.start_button = QPushButton('Start Simulation', self)
         self.start_button.clicked.connect(self.start_simulation)
-        layout.addWidget(self.start_button)
+        left_layout.addWidget(self.start_button)
 
         self.prev_button = QPushButton('Previous', self)
         self.prev_button.clicked.connect(self.prev_iteration)
         self.prev_button.setEnabled(False)
-        layout.addWidget(self.prev_button)
+        left_layout.addWidget(self.prev_button)
 
         self.next_button = QPushButton('Next', self)
         self.next_button.clicked.connect(self.next_iteration)
         self.next_button.setEnabled(False)
-        layout.addWidget(self.next_button)
+        left_layout.addWidget(self.next_button)
 
         self.result_label = QLabel('', self)
-        layout.addWidget(self.result_label)
+        left_layout.addWidget(self.result_label)
+
+        self.help_button = QPushButton('Help', self)
+        self.help_button.clicked.connect(self.show_help)
+        left_layout.addWidget(self.help_button)
+
+        top_layout.addLayout(left_layout)
+        top_layout.addLayout(right_layout)
+        main_layout.addLayout(top_layout)
 
         self.graphics_view = QGraphicsView(self)
         self.scene = QGraphicsScene(self)
         self.graphics_view.setScene(self.scene)
-        layout.addWidget(self.graphics_view)
+        main_layout.addWidget(self.graphics_view)
 
         container = QWidget()
-        container.setLayout(layout)
+        container.setLayout(main_layout)
         self.setCentralWidget(container)
 
         self.resize(1200, 1200)
@@ -95,6 +122,11 @@ class DSMGui(QMainWindow):
         file_name, _ = QFileDialog.getOpenFileName(self, "Load References File", "", "JSON Files (*.json);;All Files (*)", options=options)
         if file_name:
             self.references_input.setText(file_name)
+            with open(file_name, 'r') as rf:
+                references = json.load(rf)
+                self.references_list.clear()
+                for ref in references:
+                    self.references_list.addItem(','.join(map(str, ref)))
 
     def load_config(self):
         options = QFileDialog.Options()
@@ -118,10 +150,11 @@ class DSMGui(QMainWindow):
             algorithm = self.algorithm_input.text().upper()
             replication = self.replication_input.text().lower() == 'true'
             interval = self.interval_input.text()
-            references_file = self.references_input.text()
 
-            with open(references_file, 'r') as rf:
-                references = [tuple(ref) for ref in json.load(rf)]
+            references = []
+            for index in range(self.references_list.count()):
+                ref = self.references_list.item(index).text().split(',')
+                references.append((int(ref[0]), int(ref[1]), ref[2]))
 
             globals.init(
                 Total_pages=total_pages,
@@ -142,6 +175,7 @@ class DSMGui(QMainWindow):
 
             self.result_label.setText("Simulation completed successfully.")
             self.show_message("Success", "Simulation completed successfully.")
+            self.show_statistics()
 
             self.current_iteration = 0
             self.update_scene()
@@ -150,6 +184,18 @@ class DSMGui(QMainWindow):
 
         except Exception as e:
             self.show_message("Error", str(e))
+
+    def add_reference(self):
+        ref = self.manual_references_input.text()
+        self.references_list.addItem(ref)
+        self.manual_references_input.clear()
+
+    def delete_reference(self):
+        selected_items = self.references_list.selectedItems()
+        if not selected_items:
+            return
+        for item in selected_items:
+            self.references_list.takeItem(self.references_list.row(item))
 
     def show_message(self, title, message):
         msg = QMessageBox()
@@ -219,6 +265,52 @@ class DSMGui(QMainWindow):
         if self.current_iteration < len(globals.saved_state) - 1:
             self.current_iteration += 1
             self.update_scene()
+
+    def show_help(self):
+        help_text = """
+        DSM Simulator Help:
+        
+        - Total Pages: Total number of pages in the virtual memory.
+        - CPUs: Number of CPUs in the simulation.
+        - Pages per CPU: Number of pages each CPU can hold.
+        - Algorithm: Page replacement algorithm (LRU, OPTIMAL, FIFO).
+        - Replication: Whether replication is enabled (True/False).
+        - Interval: Reporting interval.
+        - References File: File containing the page references.
+        - Config File: File containing the configuration settings.
+        - Manual References: Manually input references in the format CPU,Page,Mode (e.g., 0,1,r;1,2,w).
+        
+        Algorithms:
+        
+        - FIFO (First-In-First-Out): The oldest page in memory is the first to be replaced.
+        - LRU (Least Recently Used): The page that has not been used for the longest time is replaced.
+        - Optimal: Replaces the page that will not be used for the longest time in the future.
+        """
+        QMessageBox.information(self, "Help", help_text)
+
+    def show_statistics(self):
+        stats = QTextEdit()
+        stats.setReadOnly(True)
+        
+        total_page_faults = sum(cpu.stats['page_faults'] for cpu in globals.cpus)
+        total_hits = sum(cpu.stats['hits'] for cpu in globals.cpus)
+        total_invalidations = sum(cpu.stats['invalidations'] for cpu in globals.cpus)
+        total_references = len(globals.references)
+
+        stats.append("------- STATISTICS -------")
+        for cpu in globals.cpus:
+            stats.append(f"CPU {cpu.id} - Page Faults: {cpu.stats['page_faults']} ({cpu.stats['page_faults'] / total_references:.2%}), Hits: {cpu.stats['hits']} ({cpu.stats['hits'] / total_references:.2%}), Invalidations: {cpu.stats['invalidations']} ({cpu.stats['invalidations'] / total_references:.2%})")
+        
+        stats.append(f"Total Page Faults: {total_page_faults} ({total_page_faults / total_references:.2%})")
+        stats.append(f"Total Hits: {total_hits} ({total_hits / total_references:.2%})")
+        stats.append(f"Total Invalidations: {total_invalidations} ({total_invalidations / total_references:.2%})")
+        
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Simulation Statistics")
+        dialog.setLayout(QVBoxLayout())
+        dialog.layout().addWidget(stats)
+        dialog.resize(400, 300)
+        dialog.exec_()
 
 def main():
     app = QApplication(sys.argv)
